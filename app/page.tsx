@@ -1,0 +1,157 @@
+import Link from "next/link";
+import { ArrowRight, Camera, Lock, MessageCircle, Sparkles } from "lucide-react";
+import { WaitlistForm } from "@/components/WaitlistForm";
+import { categories } from "@/lib/prompts";
+
+const howItWorks = [
+  "Choose a prompt that fits your moment.",
+  "Turn on the private preview.",
+  "Read the line out loud once or twice.",
+  "Stop when it feels complete."
+];
+
+export default function HomePage() {
+  return (
+    <>
+      <section className="hero-section">
+        <div className="hero-copy">
+          <p className="eyebrow">Private self-talk practice</p>
+          <h1>Mirror Affirmations</h1>
+          <p className="hero-subtitle">A private mirror practice for saying one gentle thing to yourself.</p>
+          <p className="hero-body">
+            Open your camera, choose a prompt, and read it out loud while looking at yourself. The web demo is
+            practice-only: it does not record, save, or upload video.
+          </p>
+          <div className="hero-actions">
+            <Link className="primary-button" href="/demo">
+              <Camera size={18} aria-hidden="true" />
+              Start private practice
+            </Link>
+            <Link className="secondary-button" href="#waitlist">
+              Join the waitlist
+            </Link>
+          </div>
+          <p className="privacy-inline">
+            <Lock size={15} aria-hidden="true" />
+            Camera preview stays in your browser. No account. No feed. No recording in the web demo.
+          </p>
+        </div>
+        <div className="hero-preview" aria-label="Mirror Affirmations product preview">
+          <div className="phone-frame preview-frame">
+            <div className="video-surface preview-surface">
+              <div className="preview-face" aria-hidden="true">
+                <span />
+              </div>
+              <div className="prompt-overlay position-center size-medium">
+                <p>I can let today be enough.</p>
+              </div>
+            </div>
+            <div className="phone-controls">
+              <Link className="primary-button dark" href="/demo">
+                <Camera size={16} aria-hidden="true" />
+                Start camera
+              </Link>
+              <Link className="secondary-button dark" href="/demo?category=bedtime">
+                <Sparkles size={16} aria-hidden="true" />
+                Tonight
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="content-band">
+        <div className="section-heading">
+          <p className="eyebrow">Why it feels different</p>
+          <h2>Not just another quote app</h2>
+          <p>
+            Most affirmation apps ask you to read a sentence and move on. Mirror Affirmations makes the practice more
+            personal: you see your own face, slow down, and say the words out loud in a private space.
+          </p>
+        </div>
+        <div className="feature-grid">
+          <article className="feature-block">
+            <Lock size={21} aria-hidden="true" />
+            <h3>Private by default</h3>
+            <p>The browser demo uses your camera only for live preview. It does not record, save, or upload video.</p>
+          </article>
+          <article className="feature-block">
+            <MessageCircle size={21} aria-hidden="true" />
+            <h3>Built for gentle self-talk</h3>
+            <p>Prompts are short, spoken, and first-person. No hype, no pressure, no forced positivity.</p>
+          </article>
+          <article className="feature-block">
+            <Camera size={21} aria-hidden="true" />
+            <h3>Easy to try</h3>
+            <p>Start with one line, adjust the text position, and practice without creating an account.</p>
+          </article>
+        </div>
+      </section>
+
+      <section className="content-band split-band">
+        <div>
+          <p className="eyebrow">How it works</p>
+          <h2>A 60-second mirror practice</h2>
+          <p>
+            The first version is intentionally small. You do not need a profile, a streak, or a saved recording to find
+            out whether this kind of self-talk feels useful.
+          </p>
+        </div>
+        <ol className="steps-list">
+          {howItWorks.map((step) => (
+            <li key={step}>
+              <span>{howItWorks.indexOf(step) + 1}</span>
+              {step}
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section className="content-band">
+        <div className="section-heading">
+          <p className="eyebrow">Prompt categories</p>
+          <h2>Prompts for real moments</h2>
+        </div>
+        <div className="category-grid">
+          {categories.map((category) => (
+            <Link className="category-row" href={`/demo?category=${category.id}`} key={category.id}>
+              <div>
+                <h3>{category.label}</h3>
+                <p>{category.description}</p>
+                <span>{category.sample}</span>
+              </div>
+              <ArrowRight size={18} aria-hidden="true" />
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <section className="content-band related-band">
+        <div className="section-heading">
+          <p className="eyebrow">Learn and practice</p>
+          <h2>Start where the words fit</h2>
+        </div>
+        <div className="link-grid">
+          <Link href="/mirror-affirmations">Mirror affirmations</Link>
+          <Link href="/selfie-affirmations">Selfie affirmations</Link>
+          <Link href="/bedtime-affirmations">Bedtime affirmations</Link>
+          <Link href="/positive-self-talk">Positive self-talk</Link>
+          <Link href="/self-love-affirmations">Self love affirmations</Link>
+          <Link href="/work-stress-affirmations">Work stress affirmations</Link>
+        </div>
+      </section>
+
+      <section className="waitlist-band" id="waitlist">
+        <div>
+          <p className="eyebrow">Future local video app</p>
+          <h2>Want the local video app?</h2>
+          <p>
+            The first web demo is practice-only. Join the waitlist if you want the future iOS app with local recording,
+            private history, reminders, and device-protected storage.
+          </p>
+        </div>
+        <WaitlistForm source="homepage" />
+      </section>
+    </>
+  );
+}

@@ -1,0 +1,254 @@
+[
+  {
+    "id": "bedtime_001",
+    "category": "bedtime",
+    "text": "I can let today be enough.",
+    "tags": ["night", "rest", "gentle"]
+  },
+  {
+    "id": "bedtime_002",
+    "category": "bedtime",
+    "text": "I do not have to fix everything tonight.",
+    "tags": ["night", "pressure", "rest"]
+  },
+  {
+    "id": "bedtime_003",
+    "category": "bedtime",
+    "text": "Rest is allowed before everything is finished.",
+    "tags": ["night", "rest", "permission"]
+  },
+  {
+    "id": "bedtime_004",
+    "category": "bedtime",
+    "text": "I can put this day down for now.",
+    "tags": ["night", "release", "calm"]
+  },
+  {
+    "id": "bedtime_005",
+    "category": "bedtime",
+    "text": "I did not have to be perfect to deserve sleep.",
+    "tags": ["night", "self-worth", "rest"]
+  },
+  {
+    "id": "bedtime_006",
+    "category": "bedtime",
+    "text": "I can return to this tomorrow.",
+    "tags": ["night", "pause", "tomorrow"]
+  },
+  {
+    "id": "bedtime_007",
+    "category": "bedtime",
+    "text": "My body is allowed to be tired.",
+    "tags": ["night", "body", "rest"]
+  },
+  {
+    "id": "bedtime_008",
+    "category": "bedtime",
+    "text": "Nothing else is required from me right now.",
+    "tags": ["night", "permission", "calm"]
+  },
+  {
+    "id": "morning_001",
+    "category": "morning",
+    "text": "I can begin slowly.",
+    "tags": ["morning", "gentle", "start"]
+  },
+  {
+    "id": "morning_002",
+    "category": "morning",
+    "text": "I do not need to rush into myself.",
+    "tags": ["morning", "pace", "soft"]
+  },
+  {
+    "id": "morning_003",
+    "category": "morning",
+    "text": "I can be on my own side today.",
+    "tags": ["morning", "support", "self-talk"]
+  },
+  {
+    "id": "morning_004",
+    "category": "morning",
+    "text": "I can meet this day one step at a time.",
+    "tags": ["morning", "next-step", "steady"]
+  },
+  {
+    "id": "morning_005",
+    "category": "morning",
+    "text": "I am allowed to start small.",
+    "tags": ["morning", "small", "permission"]
+  },
+  {
+    "id": "morning_006",
+    "category": "morning",
+    "text": "I can take care of myself before I perform.",
+    "tags": ["morning", "care", "pressure"]
+  },
+  {
+    "id": "work_stress_001",
+    "category": "work_stress",
+    "text": "One hard day does not define me.",
+    "tags": ["work", "stress", "identity"]
+  },
+  {
+    "id": "work_stress_002",
+    "category": "work_stress",
+    "text": "I can leave work voices at work.",
+    "tags": ["work", "boundary", "release"]
+  },
+  {
+    "id": "work_stress_003",
+    "category": "work_stress",
+    "text": "Being corrected does not mean I am broken.",
+    "tags": ["work", "criticism", "self-worth"]
+  },
+  {
+    "id": "work_stress_004",
+    "category": "work_stress",
+    "text": "I can learn without shaming myself.",
+    "tags": ["work", "learning", "kindness"]
+  },
+  {
+    "id": "work_stress_005",
+    "category": "work_stress",
+    "text": "I did enough to make it through today.",
+    "tags": ["work", "fatigue", "enough"]
+  },
+  {
+    "id": "work_stress_006",
+    "category": "work_stress",
+    "text": "My worth is not measured by one meeting.",
+    "tags": ["work", "meeting", "worth"]
+  },
+  {
+    "id": "low_mood_001",
+    "category": "low_mood",
+    "text": "I do not have to pretend I am fine.",
+    "tags": ["low-mood", "honesty", "soft"]
+  },
+  {
+    "id": "low_mood_002",
+    "category": "low_mood",
+    "text": "This feeling can be here without becoming all of me.",
+    "tags": ["low-mood", "feeling", "space"]
+  },
+  {
+    "id": "low_mood_003",
+    "category": "low_mood",
+    "text": "I can be with myself for this moment.",
+    "tags": ["low-mood", "presence", "care"]
+  },
+  {
+    "id": "low_mood_004",
+    "category": "low_mood",
+    "text": "I do not need to explain my tiredness.",
+    "tags": ["low-mood", "tired", "permission"]
+  },
+  {
+    "id": "low_mood_005",
+    "category": "low_mood",
+    "text": "I can speak softly, even when I feel heavy.",
+    "tags": ["low-mood", "heavy", "voice"]
+  },
+  {
+    "id": "low_mood_006",
+    "category": "low_mood",
+    "text": "I am still here, and that matters.",
+    "tags": ["low-mood", "presence", "worth"]
+  },
+  {
+    "id": "self_doubt_001",
+    "category": "self_doubt",
+    "text": "I do not have to become someone else to be worthy.",
+    "tags": ["self-doubt", "worth", "identity"]
+  },
+  {
+    "id": "self_doubt_002",
+    "category": "self_doubt",
+    "text": "I can stop turning comparison into proof.",
+    "tags": ["self-doubt", "comparison", "gentle"]
+  },
+  {
+    "id": "self_doubt_003",
+    "category": "self_doubt",
+    "text": "I am allowed to be unfinished.",
+    "tags": ["self-doubt", "unfinished", "permission"]
+  },
+  {
+    "id": "self_doubt_004",
+    "category": "self_doubt",
+    "text": "I can try again without attacking myself.",
+    "tags": ["self-doubt", "mistake", "retry"]
+  },
+  {
+    "id": "self_doubt_005",
+    "category": "self_doubt",
+    "text": "I can be kind to the person on this screen.",
+    "tags": ["self-doubt", "mirror", "kindness"]
+  },
+  {
+    "id": "self_doubt_006",
+    "category": "self_doubt",
+    "text": "I do not have to earn a gentler voice.",
+    "tags": ["self-doubt", "voice", "permission"]
+  },
+  {
+    "id": "small_wins_001",
+    "category": "small_wins",
+    "text": "This small thing still counts.",
+    "tags": ["small-win", "notice", "enough"]
+  },
+  {
+    "id": "small_wins_002",
+    "category": "small_wins",
+    "text": "I can let myself feel proud for a second.",
+    "tags": ["small-win", "pride", "permission"]
+  },
+  {
+    "id": "small_wins_003",
+    "category": "small_wins",
+    "text": "I showed up, and that matters.",
+    "tags": ["small-win", "showing-up", "worth"]
+  },
+  {
+    "id": "small_wins_004",
+    "category": "small_wins",
+    "text": "I can notice progress without minimizing it.",
+    "tags": ["small-win", "progress", "notice"]
+  },
+  {
+    "id": "small_wins_005",
+    "category": "small_wins",
+    "text": "I did one kind thing for myself today.",
+    "tags": ["small-win", "care", "daily"]
+  },
+  {
+    "id": "healing_days_001",
+    "category": "healing_days",
+    "text": "I can move at the pace my body allows.",
+    "tags": ["healing", "body", "pace"]
+  },
+  {
+    "id": "healing_days_002",
+    "category": "healing_days",
+    "text": "Rest is still part of becoming well.",
+    "tags": ["healing", "rest", "body"]
+  },
+  {
+    "id": "healing_days_003",
+    "category": "healing_days",
+    "text": "I do not have to rush my repair.",
+    "tags": ["healing", "repair", "pace"]
+  },
+  {
+    "id": "healing_days_004",
+    "category": "healing_days",
+    "text": "My soft days still belong to my life.",
+    "tags": ["healing", "soft", "acceptance"]
+  },
+  {
+    "id": "healing_days_005",
+    "category": "healing_days",
+    "text": "I can care for myself without proving anything.",
+    "tags": ["healing", "care", "permission"]
+  }
+]

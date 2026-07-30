@@ -1,7 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
 
-export const runtime = "edge";
-
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const allowedSources = new Set(["homepage", "demo", "seo_page", "waitlist_page"]);
 const allowedInterests = new Set(["ios_app", "android_app", "web_only", "creator_resource"]);

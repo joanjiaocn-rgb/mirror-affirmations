@@ -202,6 +202,8 @@ button:disabled {
 .hero-section,
 .content-band,
 .waitlist-band,
+.waitlist-page-hero,
+.waitlist-page-grid,
 .demo-hero,
 .demo-layout,
 .article-page,
@@ -610,6 +612,31 @@ h3 {
     var(--surface);
 }
 
+.waitlist-benefits {
+  display: grid;
+  gap: 10px;
+  margin: 22px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.waitlist-benefits li,
+.waitlist-proof li {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  color: var(--muted-ink);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.waitlist-benefits svg,
+.waitlist-proof svg {
+  flex: 0 0 auto;
+  color: var(--sage-dark);
+  margin-top: 2px;
+}
+
 .waitlist-form {
   display: grid;
   gap: 14px;
@@ -627,10 +654,19 @@ h3 {
   gap: 7px;
 }
 
-.waitlist-form label span {
+.waitlist-form label span,
+.feature-picker legend {
   color: var(--muted-ink);
   font-size: 13px;
   font-weight: 800;
+}
+
+.honeypot-field {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }
 
 .waitlist-form input,
@@ -651,6 +687,76 @@ h3 {
   resize: vertical;
 }
 
+.feature-picker {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 13px;
+  background: rgba(250, 248, 243, 0.56);
+}
+
+.feature-picker legend {
+  padding: 0 4px;
+}
+
+.feature-picker p {
+  margin: 0;
+  color: var(--muted-ink);
+  font-size: 13px;
+}
+
+.feature-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.feature-options label {
+  display: grid;
+  grid-template-columns: 18px 1fr;
+  align-items: start;
+  gap: 8px;
+  min-height: 42px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px;
+  background: var(--surface);
+}
+
+.feature-options input,
+.consent-row input {
+  width: 16px;
+  min-height: 16px;
+  margin: 1px 0 0;
+  accent-color: var(--sage);
+}
+
+.feature-options span {
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.28;
+}
+
+.consent-row {
+  display: grid;
+  grid-template-columns: 18px 1fr;
+  align-items: start;
+  gap: 9px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 11px;
+  background: rgba(232, 238, 227, 0.42);
+}
+
+.consent-row span {
+  color: var(--muted-ink);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
 .form-note {
   margin: 0;
   color: var(--muted-ink);
@@ -664,6 +770,98 @@ h3 {
 
 .form-note.error {
   color: #9a3a3a;
+}
+
+.form-result {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  gap: 8px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 11px;
+  background: rgba(250, 248, 243, 0.74);
+}
+
+.form-result svg {
+  color: var(--sage-dark);
+  margin-top: 2px;
+}
+
+.form-result p {
+  margin: 0;
+  color: var(--muted-ink);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.form-result.success {
+  border-color: color-mix(in srgb, var(--sage), white 28%);
+  background: var(--soft-sage);
+}
+
+.waitlist-page-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 430px);
+  gap: 44px;
+  align-items: center;
+  padding: 64px 0 34px;
+}
+
+.waitlist-page-hero p {
+  color: var(--muted-ink);
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+.waitlist-proof,
+.waitlist-explainer {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.waitlist-proof {
+  display: grid;
+  gap: 20px;
+  padding: 24px;
+}
+
+.waitlist-proof h2,
+.waitlist-proof p,
+.waitlist-explainer h2,
+.waitlist-explainer p {
+  margin: 0;
+}
+
+.waitlist-proof h2,
+.waitlist-explainer h2 {
+  font-size: 27px;
+}
+
+.waitlist-proof ul {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.waitlist-page-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(340px, 460px);
+  gap: 34px;
+  align-items: start;
+  padding: 24px 0 74px;
+}
+
+.waitlist-explainer {
+  display: grid;
+  gap: 16px;
+  padding: 24px;
+}
+
+.waitlist-explainer svg {
+  color: var(--sage-dark);
 }
 
 .demo-hero {
@@ -968,6 +1166,8 @@ h3 {
   .demo-layout,
   .split-band,
   .waitlist-band,
+  .waitlist-page-hero,
+  .waitlist-page-grid,
   .footer-inner {
     grid-template-columns: 1fr;
   }
@@ -1004,6 +1204,8 @@ h3 {
   .hero-section,
   .content-band,
   .waitlist-band,
+  .waitlist-page-hero,
+  .waitlist-page-grid,
   .demo-hero,
   .demo-layout,
   .article-page,
@@ -1080,6 +1282,10 @@ h3 {
   }
 
   .control-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-options {
     grid-template-columns: 1fr;
   }
 

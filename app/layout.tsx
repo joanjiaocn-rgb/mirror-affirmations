@@ -87,6 +87,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                   <Lock size={16} aria-hidden="true" />
                   Privacy
                 </Link>
+                <Link href="/waitlist">Waitlist</Link>
               </div>
               <Link className="nav-cta" href="/demo">
                 Start practice
@@ -108,6 +109,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                 <Link href="/selfie-affirmations">Selfie Affirmations</Link>
                 <Link href="/bedtime-affirmations">Bedtime</Link>
                 <Link href="/positive-self-talk">Positive Self-Talk</Link>
+                <Link href="/waitlist">Waitlist</Link>
                 <Link href="/privacy">Privacy</Link>
                 <Link href="/terms">Terms</Link>
               </div>

@@ -1,4 +1,4 @@
-export const staticRoutes = ["/", "/demo", "/privacy", "/terms"];
+export const staticRoutes = ["/", "/demo", "/waitlist", "/privacy", "/terms"];
 
 export const articleRoutes = [
   "/mirror-affirmations",

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Camera, Lock, MessageCircle, Sparkles } from "lucide-react";
+import { ArrowRight, Camera, CheckCircle2, Lock, MessageCircle, Sparkles } from "lucide-react";
 import { WaitlistForm } from "@/components/WaitlistForm";
 import { categories } from "@/lib/prompts";
 
@@ -27,7 +27,7 @@ export default function HomePage() {
               <Camera size={18} aria-hidden="true" />
               Start private practice
             </Link>
-            <Link className="secondary-button" href="#waitlist">
+            <Link className="secondary-button" href="/waitlist">
               Join the waitlist
             </Link>
           </div>
@@ -149,6 +149,20 @@ export default function HomePage() {
             The first web demo is practice-only. Join the waitlist if you want the future iOS app with local recording,
             private history, reminders, and device-protected storage.
           </p>
+          <ul className="waitlist-benefits">
+            <li>
+              <CheckCircle2 size={17} aria-hidden="true" />
+              Tell me which feature matters before I build the app.
+            </li>
+            <li>
+              <CheckCircle2 size={17} aria-hidden="true" />
+              Get invited when there is a small test version.
+            </li>
+            <li>
+              <CheckCircle2 size={17} aria-hidden="true" />
+              No camera, video, audio, or face data is sent with signup.
+            </li>
+          </ul>
         </div>
         <WaitlistForm source="homepage" />
       </section>

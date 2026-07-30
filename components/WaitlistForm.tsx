@@ -41,7 +41,7 @@ export function WaitlistForm({ source, compact = false }: WaitlistFormProps) {
   const [message, setMessage] = useState("");
   const [consent, setConsent] = useState(false);
   const [website, setWebsite] = useState("");
-  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "demo" | "error">("idle");
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "unavailable" | "error">("idle");
   const [hasStarted, setHasStarted] = useState(false);
 
   const selectedFeatureText = useMemo(() => {
@@ -99,9 +99,17 @@ export function WaitlistForm({ source, compact = false }: WaitlistFormProps) {
         throw new Error("Waitlist request failed");
       }
 
-      const result = (await response.json()) as { demoMode?: boolean };
-      trackEvent("waitlist_submitted", { source, interest, demoMode: Boolean(result.demoMode) });
-      setStatus(result.demoMode ? "demo" : "success");
+      if (response.status === 503) {
+        setStatus("unavailable");
+        return;
+      }
+
+      if (!response.ok) {
+        throw new Error("Waitlist request failed");
+      }
+
+      trackEvent("waitlist_submitted", { source, interest });
+      setStatus("success");
       setEmail("");
       setMessage("");
       setConsent(false);
@@ -235,10 +243,10 @@ export function WaitlistForm({ source, compact = false }: WaitlistFormProps) {
           <p>You are on the list. I will only email when there is something useful to try.</p>
         </div>
       ) : null}
-      {status === "demo" ? (
+      {status === "unavailable" ? (
         <div className="form-result">
           <CheckCircle2 size={18} aria-hidden="true" />
-          <p>Preview mode: the form works. Connect the waitlist collector before inviting real visitors.</p>
+          <p>The waitlist is being set up. Please try again shortly.</p>
         </div>
       ) : null}
       {status === "error" ? <p className="form-note error">Please check the email, consent checkbox, and try again.</p> : null}

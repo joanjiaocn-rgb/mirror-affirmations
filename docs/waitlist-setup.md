@@ -2,43 +2,36 @@
 
 Date: 2026-07-30
 
-## Current Behavior
+## Storage Architecture
 
-The waitlist form is fully wired, but it runs in preview mode until `WAITLIST_WEBHOOK_URL` is configured.
+Waitlist signups are stored in the project's Cloudflare D1 database. The site does not send signup data to a third-party form provider.
 
-In preview mode:
+The Worker requires one D1 binding named `WAITLIST_DB`. A signup returns success only after the database write succeeds.
 
-- The form validates input.
-- The API returns success.
-- The server log does not print the visitor email.
-- The signup is not stored anywhere permanent.
+## One-Time Cloudflare Setup
 
-## Recommended No-Code Setup
+1. In Cloudflare Dashboard, open **Workers & Pages** and then **D1 SQL Database**.
+2. Create a database named `mirror-affirmations-waitlist`.
+3. Open the database and use **Console** to run the SQL in `migrations/0001_create_waitlist_subscribers.sql`.
+4. Open the `mirror-affirmations` Worker project, then **Settings** > **Bindings** > **Add** > **D1 database**.
+5. Set the variable name to `WAITLIST_DB` and select `mirror-affirmations-waitlist`.
+6. Save the binding and redeploy the current `main` commit.
 
-Use a webhook collection tool first, such as Make, Zapier, Tally webhook, Airtable automation, or a small Cloudflare Worker endpoint.
+The production database ID is intentionally not committed to the repository. If future command-line deployment needs it, add the same D1 binding to `wrangler.jsonc` using the ID shown in the D1 database settings.
 
-Set this environment variable in Cloudflare:
+## Verify A Real Signup
 
-```text
-WAITLIST_WEBHOOK_URL=https://your-webhook-url
+1. Open `/waitlist` on the deployed site in an incognito window.
+2. Submit a test email you control.
+3. In the D1 Console, run:
+
+```sql
+SELECT email, source, created_at, status
+FROM waitlist_subscribers
+ORDER BY created_at DESC;
 ```
 
-The site will POST JSON to that URL.
-
-## Payload
-
-```json
-{
-  "email": "user@example.com",
-  "source": "homepage",
-  "interest": "ios_app",
-  "useCase": "bedtime",
-  "featureInterest": ["local_recording", "gentle_reminders"],
-  "message": "I want a private bedtime routine.",
-  "consent": true,
-  "createdAt": "2026-07-30T00:00:00.000Z"
-}
-```
+4. Confirm the submitted email appears exactly once. Submit it again to verify duplicate signups update the existing row instead of creating another row.
 
 ## Privacy Boundary
 

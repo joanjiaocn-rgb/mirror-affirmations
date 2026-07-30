@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { getCloudflareContext } from "@opennextjs/cloudflare";
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const allowedSources = new Set(["homepage", "demo", "seo_page", "waitlist_page"]);
@@ -51,6 +52,7 @@ export async function POST(request: NextRequest) {
     ? body.featureInterest.filter((item) => allowedFeatures.has(item)).slice(0, 6)
     : [];
 
+  const now = new Date().toISOString();
   const payload = {
     email,
     source,
@@ -58,31 +60,58 @@ export async function POST(request: NextRequest) {
     useCase,
     featureInterest,
     message: body?.message?.slice(0, 500) || "",
-    consent: true,
-    createdAt: new Date().toISOString()
+    consentedAt: now,
+    createdAt: now
   };
 
-  if (!process.env.WAITLIST_WEBHOOK_URL) {
-    console.info("waitlist_preview", {
-      source: payload.source,
-      interest: payload.interest,
-      useCase: payload.useCase,
-      featureInterest: payload.featureInterest,
-      createdAt: payload.createdAt
-    });
-    return NextResponse.json({ ok: true, demoMode: true });
+  let database: WaitlistDatabase | undefined;
+
+  try {
+    const { env } = await getCloudflareContext({ async: true });
+    database = env.WAITLIST_DB;
+  } catch {
+    return NextResponse.json({ error: "Waitlist storage is not available yet." }, { status: 503 });
   }
 
-  const response = await fetch(process.env.WAITLIST_WEBHOOK_URL, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(payload)
-  });
+  if (!database) {
+    return NextResponse.json({ error: "Waitlist storage is not available yet." }, { status: 503 });
+  }
 
-  if (!response.ok) {
-    return NextResponse.json({ error: "Waitlist provider failed." }, { status: 502 });
+  try {
+    const result = await database
+      .prepare(
+        `INSERT INTO waitlist_subscribers (
+          email, source, interest, use_case, feature_interest, message, consented_at, created_at, updated_at
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+        ON CONFLICT(email) DO UPDATE SET
+          source = excluded.source,
+          interest = excluded.interest,
+          use_case = excluded.use_case,
+          feature_interest = excluded.feature_interest,
+          message = excluded.message,
+          consented_at = excluded.consented_at,
+          updated_at = excluded.updated_at,
+          status = 'subscribed',
+          unsubscribed_at = NULL`
+      )
+      .bind(
+        payload.email,
+        payload.source,
+        payload.interest,
+        payload.useCase,
+        JSON.stringify(payload.featureInterest),
+        payload.message,
+        payload.consentedAt,
+        payload.createdAt,
+        payload.createdAt
+      )
+      .run();
+
+    if (!result.success) {
+      throw new Error("D1 write did not complete.");
+    }
+  } catch {
+    return NextResponse.json({ error: "Could not save your signup. Please try again." }, { status: 502 });
   }
 
   return NextResponse.json({ ok: true });

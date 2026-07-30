@@ -13,7 +13,7 @@ This folder contains the v0 product package for a private mirror affirmation web
 - `docs/seo-copy-freeze.md` - frozen English landing and SEO page copy for design/frontend.
 - `docs/visual-design-source.md` - visual direction, layout, components, and frontend handoff.
 - `docs/copy-design-handoff.md` - short handoff summary for the implementation stage.
-- `docs/waitlist-setup.md` - how to connect the waitlist to a real webhook collector.
+- `docs/waitlist-setup.md` - how to store waitlist signups in Cloudflare D1.
 - `data/prompt-library-v0.json` - first structured prompt library for the demo.
 
 ## Current Recommendation

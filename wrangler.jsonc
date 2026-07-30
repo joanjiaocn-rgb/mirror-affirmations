@@ -9,6 +9,13 @@
     "directory": ".open-next/assets",
     "binding": "ASSETS"
   },
+  "d1_databases": [
+    {
+      "binding": "WAITLIST_DB",
+      "database_name": "mirror-affirmations-waitlist",
+      "database_id": "5336a48c-ab00-4127-bbe0-6cb4b551a1ed"
+    }
+  ],
   "services": [
     {
       "binding": "WORKER_SELF_REFERENCE",

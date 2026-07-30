@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Camera, Heart, Lock } from "lucide-react";
+import { Camera, Lock } from "lucide-react";
 import { Analytics } from "@/components/Analytics";
 import { absoluteUrl, site } from "@/lib/site";
 import "./globals.css";
@@ -71,9 +71,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <header className="site-header">
             <nav className="nav" aria-label="Main navigation">
               <Link className="brand" href="/">
-                <span className="brand-mark">
-                  <Heart size={18} aria-hidden="true" />
-                </span>
+                <span className="brand-mark" aria-hidden="true">M</span>
                 <span className="brand-title">Mirror Affirmations</span>
               </Link>
               <div className="nav-links">

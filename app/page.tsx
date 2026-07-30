@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Camera, CheckCircle2, Lock, MessageCircle, Sparkles } from "lucide-react";
+import { ArrowRight, Camera, CheckCircle2, Lock, MessageCircle } from "lucide-react";
 import { WaitlistForm } from "@/components/WaitlistForm";
 import { categories } from "@/lib/prompts";
 
@@ -15,8 +15,11 @@ export default function HomePage() {
     <>
       <section className="hero-section">
         <div className="hero-copy">
-          <p className="eyebrow">Private self-talk practice</p>
-          <h1>Mirror Affirmations</h1>
+          <p className="eyebrow">A quiet practice for ordinary days</p>
+          <div className="hero-title-row">
+            <h1>Mirror<br />Affirmations</h1>
+            <span aria-hidden="true">01</span>
+          </div>
           <p className="hero-subtitle">A private mirror practice for saying one gentle thing to yourself.</p>
           <p className="hero-body">
             Open your camera, choose a prompt, and read it out loud while looking at yourself. The web demo is
@@ -35,25 +38,40 @@ export default function HomePage() {
             <Lock size={15} aria-hidden="true" />
             Camera preview stays in your browser. No account. No feed. No recording in the web demo.
           </p>
+          <div className="hero-details" aria-label="Practice details">
+            <span>One minute</span>
+            <span>No account</span>
+            <span>Private by design</span>
+          </div>
         </div>
         <div className="hero-preview" aria-label="Mirror Affirmations product preview">
-          <div className="phone-frame preview-frame">
-            <div className="video-surface preview-surface">
-              <div className="preview-face" aria-hidden="true">
-                <span />
+          <div className="practice-window">
+            <div className="practice-window-bar">
+              <span className="practice-window-title">
+                <i aria-hidden="true" />
+                Mirror practice
+              </span>
+              <span className="practice-window-state">Private preview</span>
+            </div>
+            <div className="practice-window-stage">
+              <div className="mirror-frame-art" aria-hidden="true">
+                <span className="mirror-frame-line mirror-frame-line-one" />
+                <span className="mirror-frame-line mirror-frame-line-two" />
               </div>
-              <div className="prompt-overlay position-center size-medium">
-                <p>I can let today be enough.</p>
+              <p className="preview-prompt">I can let today be enough.</p>
+              <div className="preview-prompt-meta">
+                <span>Bedtime</span>
+                <span>Prompt 01</span>
               </div>
             </div>
-            <div className="phone-controls">
-              <Link className="primary-button dark" href="/demo">
+            <div className="practice-window-footer">
+              <span>
+                <Lock size={14} aria-hidden="true" />
+                Browser only
+              </span>
+              <Link href="/demo">
                 <Camera size={16} aria-hidden="true" />
-                Start camera
-              </Link>
-              <Link className="secondary-button dark" href="/demo?category=bedtime">
-                <Sparkles size={16} aria-hidden="true" />
-                Tonight
+                Open practice
               </Link>
             </div>
           </div>
@@ -71,16 +89,19 @@ export default function HomePage() {
         </div>
         <div className="feature-grid">
           <article className="feature-block">
+            <span className="feature-number">01</span>
             <Lock size={21} aria-hidden="true" />
             <h3>Private by default</h3>
             <p>The browser demo uses your camera only for live preview. It does not record, save, or upload video.</p>
           </article>
           <article className="feature-block">
+            <span className="feature-number">02</span>
             <MessageCircle size={21} aria-hidden="true" />
             <h3>Built for gentle self-talk</h3>
             <p>Prompts are short, spoken, and first-person. No hype, no pressure, no forced positivity.</p>
           </article>
           <article className="feature-block">
+            <span className="feature-number">03</span>
             <Camera size={21} aria-hidden="true" />
             <h3>Easy to try</h3>
             <p>Start with one line, adjust the text position, and practice without creating an account.</p>
@@ -113,8 +134,9 @@ export default function HomePage() {
           <h2>Prompts for real moments</h2>
         </div>
         <div className="category-grid">
-          {categories.map((category) => (
+          {categories.map((category, index) => (
             <Link className="category-row" href={`/demo?category=${category.id}`} key={category.id}>
+              <span className="category-number">0{index + 1}</span>
               <div>
                 <h3>{category.label}</h3>
                 <p>{category.description}</p>

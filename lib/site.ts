@@ -1,6 +1,6 @@
 export const site = {
   name: "Mirror Affirmations",
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://mirroraffirmations.app",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://mirroraffirmations.online",
   description:
     "Try a private mirror affirmation practice with gentle prompts on screen. Use your camera for a live preview only. No recording or video upload in the web demo.",
   lastUpdated: "2026-07-30",

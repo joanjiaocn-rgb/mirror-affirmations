@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 const apexHost = "mirroraffirmations.online";
 const wwwHost = `www.${apexHost}`;
 
-export function proxy(request: NextRequest) {
+export function middleware(request: NextRequest) {
   const host = request.headers.get("host")?.toLowerCase().replace(/:\d+$/, "");
 
   if (host === wwwHost && (request.method === "GET" || request.method === "HEAD")) {

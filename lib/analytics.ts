@@ -12,6 +12,11 @@ export type AnalyticsEventName =
   | "overlay_position_changed"
   | "overlay_size_changed"
   | "mirror_toggle_changed"
+  | "homepage_demo_clicked"
+  | "homepage_waitlist_clicked"
+  | "preview_demo_clicked"
+  | "category_link_clicked"
+  | "learn_link_clicked"
   | "waitlist_form_started"
   | "waitlist_submitted";
 

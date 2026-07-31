@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, Camera, CheckCircle2, Lock, MessageCircle } from "lucide-react";
+import { TrackedLink } from "@/components/TrackedLink";
 import { WaitlistForm } from "@/components/WaitlistForm";
 import { categories } from "@/lib/prompts";
 
@@ -26,13 +27,18 @@ export default function HomePage() {
             practice-only: it does not record, save, or upload video.
           </p>
           <div className="hero-actions">
-            <Link className="primary-button" href="/demo">
+            <TrackedLink className="primary-button" href="/demo" eventName="homepage_demo_clicked" eventProperties={{ position: "hero" }}>
               <Camera size={18} aria-hidden="true" />
               Start private practice
-            </Link>
-            <Link className="secondary-button" href="/waitlist">
+            </TrackedLink>
+            <TrackedLink
+              className="secondary-button"
+              href="/waitlist"
+              eventName="homepage_waitlist_clicked"
+              eventProperties={{ position: "hero" }}
+            >
               Join the waitlist
-            </Link>
+            </TrackedLink>
           </div>
           <p className="privacy-inline">
             <Lock size={15} aria-hidden="true" />
@@ -69,10 +75,10 @@ export default function HomePage() {
                 <Lock size={14} aria-hidden="true" />
                 Browser only
               </span>
-              <Link href="/demo">
+              <TrackedLink href="/demo" eventName="preview_demo_clicked" eventProperties={{ position: "hero_preview" }}>
                 <Camera size={16} aria-hidden="true" />
                 Open practice
-              </Link>
+              </TrackedLink>
             </div>
           </div>
         </div>
@@ -135,7 +141,13 @@ export default function HomePage() {
         </div>
         <div className="category-grid">
           {categories.map((category, index) => (
-            <Link className="category-row" href={`/demo?category=${category.id}`} key={category.id}>
+            <TrackedLink
+              className="category-row"
+              href={`/demo?category=${category.id}`}
+              key={category.id}
+              eventName="category_link_clicked"
+              eventProperties={{ category: category.id }}
+            >
               <span className="category-number">0{index + 1}</span>
               <div>
                 <h3>{category.label}</h3>
@@ -143,7 +155,7 @@ export default function HomePage() {
                 <span>{category.sample}</span>
               </div>
               <ArrowRight size={18} aria-hidden="true" />
-            </Link>
+            </TrackedLink>
           ))}
         </div>
       </section>
@@ -154,12 +166,24 @@ export default function HomePage() {
           <h2>Start where the words fit</h2>
         </div>
         <div className="link-grid">
-          <Link href="/mirror-affirmations">Mirror affirmations</Link>
-          <Link href="/selfie-affirmations">Selfie affirmations</Link>
-          <Link href="/bedtime-affirmations">Bedtime affirmations</Link>
-          <Link href="/positive-self-talk">Positive self-talk</Link>
-          <Link href="/self-love-affirmations">Self love affirmations</Link>
-          <Link href="/work-stress-affirmations">Work stress affirmations</Link>
+          <TrackedLink href="/mirror-affirmations" eventName="learn_link_clicked" eventProperties={{ slug: "mirror-affirmations" }}>
+            Mirror affirmations
+          </TrackedLink>
+          <TrackedLink href="/selfie-affirmations" eventName="learn_link_clicked" eventProperties={{ slug: "selfie-affirmations" }}>
+            Selfie affirmations
+          </TrackedLink>
+          <TrackedLink href="/bedtime-affirmations" eventName="learn_link_clicked" eventProperties={{ slug: "bedtime-affirmations" }}>
+            Bedtime affirmations
+          </TrackedLink>
+          <TrackedLink href="/positive-self-talk" eventName="learn_link_clicked" eventProperties={{ slug: "positive-self-talk" }}>
+            Positive self-talk
+          </TrackedLink>
+          <TrackedLink href="/self-love-affirmations" eventName="learn_link_clicked" eventProperties={{ slug: "self-love-affirmations" }}>
+            Self love affirmations
+          </TrackedLink>
+          <TrackedLink href="/work-stress-affirmations" eventName="learn_link_clicked" eventProperties={{ slug: "work-stress-affirmations" }}>
+            Work stress affirmations
+          </TrackedLink>
         </div>
       </section>
 

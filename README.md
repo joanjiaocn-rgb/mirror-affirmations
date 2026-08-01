@@ -1,5 +1,14 @@
 # Mirror Affirmations
 
+A private, browser-based mirror practice for gentle self-talk.
+
+## Try it
+
+[Open the live demo](https://mirroraffirmations.online/demo?utm_source=github&utm_medium=referral&utm_campaign=repo_readme)
+
+[Visit the website](https://mirroraffirmations.online/?utm_source=github&utm_medium=referral&utm_campaign=repo_readme)
+
+The web demo does not record, save, or upload video.
 Working name: Mirror Affirmations
 
 This folder contains the v0 product package for a private mirror affirmation web demo and waitlist site.

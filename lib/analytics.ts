@@ -23,6 +23,12 @@ export type AnalyticsEventName =
 type AnalyticsWindow = Window & {
   dataLayer?: unknown[];
   gtag?: (eventType: "event", eventName: string, properties?: Record<string, string | number | boolean>) => void;
+  plausible?: (
+    eventName: string,
+    options?: {
+      props?: Record<string, string | number | boolean>;
+    }
+  ) => void;
 };
 
 export function trackEvent(eventName: AnalyticsEventName, properties: Record<string, string | number | boolean> = {}) {
@@ -43,6 +49,10 @@ export function trackEvent(eventName: AnalyticsEventName, properties: Record<str
 
   if (analyticsWindow.gtag) {
     analyticsWindow.gtag("event", eventName, properties);
+  }
+
+  if (analyticsWindow.plausible && eventName !== "page_view") {
+    analyticsWindow.plausible(eventName, Object.keys(properties).length ? { props: properties } : undefined);
   }
 
   if (analyticsWindow.dataLayer) {

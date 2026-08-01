@@ -8,6 +8,8 @@ import { trackEvent } from "@/lib/analytics";
 const cloudflareToken = process.env.NEXT_PUBLIC_CLOUDFLARE_WEB_ANALYTICS_TOKEN;
 const clarityProjectId = process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID;
 const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || "G-7CGX9VPTV3";
+const plausibleScriptSrc =
+  process.env.NEXT_PUBLIC_PLAUSIBLE_SCRIPT_SRC || "https://plausible.shipsolo.io/js/pa-Ac-UF_zjap4wMXv4kgY7-.js";
 
 export function Analytics() {
   const pathname = usePathname();
@@ -18,6 +20,26 @@ export function Analytics() {
 
   return (
     <>
+      {plausibleScriptSrc ? (
+        <>
+          <Script
+            id="plausible-queue"
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.plausible = window.plausible || function() {
+                  (window.plausible.q = window.plausible.q || []).push(arguments);
+                };
+                window.plausible.init = window.plausible.init || function(options) {
+                  window.plausible.o = options || {};
+                };
+                window.plausible.init();
+              `
+            }}
+          />
+          <Script id="plausible-analytics" src={plausibleScriptSrc} strategy="afterInteractive" />
+        </>
+      ) : null}
       {cloudflareToken ? (
         <Script
           id="cloudflare-web-analytics"

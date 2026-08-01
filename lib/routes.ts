@@ -5,6 +5,9 @@ export const articleRoutes = [
   "/selfie-affirmations",
   "/video-affirmations",
   "/bedtime-affirmations",
+  "/morning-affirmations-to-say-out-loud",
+  "/sleep-affirmations-for-a-calmer-evening",
+  "/how-mirror-affirmations-work",
   "/self-love-affirmations",
   "/positive-self-talk",
   "/work-stress-affirmations"

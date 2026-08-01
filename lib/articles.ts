@@ -73,7 +73,69 @@ export const articlePages: ArticlePage[] = [
         answer: "Yes. The web demo is no-recording by default."
       }
     ],
-    related: ["selfie-affirmations", "bedtime-affirmations", "positive-self-talk"]
+    related: ["how-mirror-affirmations-work", "selfie-affirmations", "positive-self-talk"]
+  },
+  {
+    slug: "how-mirror-affirmations-work",
+    title: "How Mirror Affirmations Work | Private Self-Talk Practice",
+    description:
+      "Learn how Mirror Affirmations works as a private browser practice with on-screen prompts, camera preview, and no recording in the web demo.",
+    h1: "How Mirror Affirmations Work",
+    intro:
+      "Mirror Affirmations works by combining three simple pieces: a live camera preview, a short first-person prompt, and a private moment to say the words out loud. The web demo is intentionally practice-only, so you can try the format without creating an account or recording yourself.",
+    cta: "Try Mirror Affirmations",
+    ctaHref: "/demo",
+    category: "bedtime",
+    prompts: [
+      "I can start with one sentence.",
+      "I do not have to make this perfect.",
+      "I can look at myself with less pressure.",
+      "This can be a private practice.",
+      "I can stop when it feels complete.",
+      "One honest line is enough for today."
+    ],
+    sections: [
+      {
+        heading: "The practice in one minute",
+        body: [
+          "Open the demo, choose a prompt category, and place the text where it feels comfortable on screen. Then turn on the camera preview if you want a mirror-like experience, or use no-camera mode if that feels easier.",
+          "Read the line once or twice. You do not need to believe it instantly. The useful part is noticing whether your voice can become a little less harsh for one short moment."
+        ]
+      },
+      {
+        heading: "What the web demo does",
+        body: [
+          "The demo shows a live camera preview in your browser and keeps the prompt visible over the screen. You can change the prompt category, text size, and prompt position before you practice.",
+          "The current web version does not record, save, or upload video. It is a way to test the practice before deciding whether a future local-only video app would be useful."
+        ]
+      },
+      {
+        heading: "When to use it",
+        body: [
+          "Mirror affirmations can fit into ordinary moments: before opening your laptop, after a stressful conversation, before bed, or during a quiet break when your inner voice has become too sharp.",
+          "It is not meant to replace support, therapy, or crisis care. It is a small self-care exercise for private reflection."
+        ]
+      }
+    ],
+    faqs: [
+      {
+        question: "Does Mirror Affirmations record me?",
+        answer: "No. The web demo uses camera preview only and does not record, save, or upload video."
+      },
+      {
+        question: "Do I need to create an account?",
+        answer: "No. You can open the demo and try the practice without signing in."
+      },
+      {
+        question: "Can I use Mirror Affirmations without camera access?",
+        answer: "Yes. You can use no-camera practice mode and still read the prompts privately."
+      },
+      {
+        question: "Is Mirror Affirmations therapy?",
+        answer: "No. It is a self-care and reflection tool, not a medical, therapy, or crisis service."
+      }
+    ],
+    related: ["mirror-affirmations", "selfie-affirmations", "positive-self-talk"]
   },
   {
     slug: "selfie-affirmations",
@@ -167,7 +229,7 @@ export const articlePages: ArticlePage[] = [
         answer: "Practice mode lets users test whether the experience feels useful before worrying about saved videos."
       }
     ],
-    related: ["selfie-affirmations", "mirror-affirmations", "small-wins"]
+    related: ["selfie-affirmations", "mirror-affirmations", "how-mirror-affirmations-work"]
   },
   {
     slug: "bedtime-affirmations",
@@ -215,7 +277,137 @@ export const articlePages: ArticlePage[] = [
         answer: "Yes. No-camera practice should always remain available."
       }
     ],
-    related: ["mirror-affirmations", "positive-self-talk", "healing-days"]
+    related: ["sleep-affirmations-for-a-calmer-evening", "morning-affirmations-to-say-out-loud", "positive-self-talk"]
+  },
+  {
+    slug: "morning-affirmations-to-say-out-loud",
+    title: "Morning Affirmations to Say Out Loud | Mirror Affirmations",
+    description:
+      "Try gentle morning affirmations to say out loud with a private mirror practice. Start slowly with short prompts and no recording in the web demo.",
+    h1: "Morning Affirmations to Say Out Loud",
+    intro:
+      "Morning affirmations to say out loud work best when they are short, believable, and easy to repeat before the day gets noisy. You are not trying to become instantly confident. You are giving yourself one steady sentence before everything else starts asking for your attention.",
+    cta: "Try Mirror Affirmations",
+    ctaHref: "/demo?category=morning",
+    category: "morning",
+    prompts: [
+      "I can begin slowly.",
+      "I do not have to rush into the day.",
+      "I can be on my own side this morning.",
+      "One small step is enough to begin.",
+      "I can meet today without performing.",
+      "I can take a breath before I answer the world.",
+      "I am allowed to need a gentle start.",
+      "Today can begin quietly."
+    ],
+    sections: [
+      {
+        heading: "How to say morning affirmations out loud",
+        body: [
+          "Choose one line before checking messages, email, or social feeds. Look at yourself for a few seconds, then say the sentence once in a normal voice. If it feels useful, say it again more slowly.",
+          "The sentence should feel reachable. If a big affirmation feels fake, make it smaller. A quiet line you can actually say is better than a dramatic line you immediately reject."
+        ]
+      },
+      {
+        heading: "Why speaking changes the practice",
+        body: [
+          "Reading a prompt silently can be helpful, but saying it out loud makes the practice more physical. You hear your own voice, notice your reaction, and give the words to yourself instead of only scanning them.",
+          "Using the mirror demo keeps the words visible while you practice. The camera preview stays in your browser, and the web demo does not record or upload video."
+        ]
+      },
+      {
+        heading: "A simple morning routine",
+        body: [
+          "Start with one breath, choose one prompt, say it once, then decide on one small next action. That might be drinking water, opening a notebook, making the bed, or stepping outside for a minute.",
+          "The point is not to force a perfect mood. The point is to begin the day without immediately turning against yourself."
+        ]
+      }
+    ],
+    faqs: [
+      {
+        question: "What are good morning affirmations to say out loud?",
+        answer: "Good morning affirmations are short, first-person sentences that feel believable, such as 'I can begin slowly' or 'One small step is enough to begin.'"
+      },
+      {
+        question: "Should I say affirmations before looking at my phone?",
+        answer: "If you can, yes. A short practice before messages or feeds can help you start with your own voice first."
+      },
+      {
+        question: "Do I need to use the camera?",
+        answer: "No. You can use the private mirror preview or practice without camera access."
+      },
+      {
+        question: "Does the demo save my morning practice?",
+        answer: "No. The web demo does not record, save, or upload your camera preview."
+      }
+    ],
+    related: ["how-mirror-affirmations-work", "positive-self-talk", "mirror-affirmations"]
+  },
+  {
+    slug: "sleep-affirmations-for-a-calmer-evening",
+    title: "Sleep Affirmations for a Calmer Evening | Mirror Affirmations",
+    description:
+      "Try gentle sleep affirmations for a calmer evening routine. Use short prompts privately with no recording or video upload in the web demo.",
+    h1: "Sleep Affirmations for a Calmer Evening",
+    intro:
+      "Sleep affirmations for a calmer evening are short phrases you can say when the day is ending but your mind is still carrying too much. They are not a sleep treatment. They are a small way to put the day down with a softer voice.",
+    cta: "Try Mirror Affirmations",
+    ctaHref: "/demo?category=bedtime",
+    category: "bedtime",
+    prompts: [
+      "I can let today be enough.",
+      "I do not have to solve this tonight.",
+      "My body is allowed to be tired.",
+      "I can put the day down for now.",
+      "Rest is allowed before everything is finished.",
+      "I made it through today.",
+      "Nothing else is required from me right now.",
+      "I can be soft with myself tonight.",
+      "Tomorrow can wait until morning.",
+      "I do not need to replay the whole day."
+    ],
+    sections: [
+      {
+        heading: "How to use sleep affirmations",
+        body: [
+          "Choose one prompt when you are getting ready for bed or sitting quietly at the end of the day. Say it out loud once, pause, then say it again with less pressure.",
+          "If the word sleep feels too loaded, treat this as an evening self-talk practice. The goal is not to force sleep. The goal is to stop arguing with yourself for one minute."
+        ]
+      },
+      {
+        heading: "A calmer evening routine",
+        body: [
+          "Keep the routine small: dim the screen, choose a gentle line, say it once, and stop. You can use the mirror demo with camera preview or use no-camera mode if you prefer.",
+          "Avoid turning the practice into another task to complete perfectly. One sentence is enough."
+        ]
+      },
+      {
+        heading: "What to avoid",
+        body: [
+          "Avoid prompts that shame you for being tired, worried, or awake. A useful sleep affirmation should make the evening feel less demanding, not more demanding.",
+          "Mirror Affirmations is a self-care practice tool. It is not medical advice, therapy, or emergency support."
+        ]
+      }
+    ],
+    faqs: [
+      {
+        question: "Are sleep affirmations a sleep treatment?",
+        answer: "No. They are a calming self-care routine, not a medical or sleep treatment."
+      },
+      {
+        question: "When should I say sleep affirmations?",
+        answer: "Try them near the end of your evening, before bed, after journaling, or when your mind keeps replaying the day."
+      },
+      {
+        question: "Can I say them silently?",
+        answer: "Yes. Saying them out loud can feel more personal, but silent practice is fine if that is what feels comfortable."
+      },
+      {
+        question: "Does the demo record or upload anything?",
+        answer: "No. The web demo does not record, save, or upload video."
+      }
+    ],
+    related: ["bedtime-affirmations", "morning-affirmations-to-say-out-loud", "how-mirror-affirmations-work"]
   },
   {
     slug: "self-love-affirmations",

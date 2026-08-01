@@ -17,6 +17,9 @@ The site should not be a generic landing page only. Each indexable page should a
 | `/selfie-affirmations` | Yes | Selfie-based affirmations | Selfie Affirmations | Practice with your camera | Article, FAQPage |
 | `/video-affirmations` | Yes | Video affirmation concept | Video Affirmations | Join the app waitlist | Article, FAQPage |
 | `/bedtime-affirmations` | Yes | Nighttime calming practice | Bedtime Affirmations | Try tonight's prompt | Article, FAQPage |
+| `/morning-affirmations-to-say-out-loud` | Yes | Morning affirmations spoken aloud | Morning Affirmations to Say Out Loud | Try Mirror Affirmations | Article, FAQPage |
+| `/sleep-affirmations-for-a-calmer-evening` | Yes | Calmer evening and sleep affirmations | Sleep Affirmations for a Calmer Evening | Try Mirror Affirmations | Article, FAQPage |
+| `/how-mirror-affirmations-work` | Yes | Product education and trust | How Mirror Affirmations Work | Try Mirror Affirmations | Article, FAQPage |
 | `/self-love-affirmations` | Yes | Self-love prompts | Self Love Affirmations | Practice privately | Article, FAQPage |
 | `/positive-self-talk` | Yes | Positive self-talk exercise | Positive Self-Talk Practice | Open mirror practice | Article, FAQPage |
 | `/work-stress-affirmations` | Yes | Work stress decompression | Affirmations for Work Stress | Try a 60-second reset | Article, FAQPage |
@@ -126,7 +129,51 @@ Must include:
 - Every SEO page links to `/demo` in the first half of the page.
 - Every page links to `/privacy` near the demo CTA.
 - `/video-affirmations` should link to waitlist, not imply recording is available.
+- New long-tail pages should link back to the homepage through breadcrumb and to `/demo` through a clear "Try Mirror Affirmations" CTA.
 - Use natural anchor text, not repeated exact-match anchors.
+
+## 2026-08-02 Long-Tail Additions
+
+### `/morning-affirmations-to-say-out-loud`
+
+Search intent: users want short morning affirmations they can speak, not just read.
+
+Angle: a gentle one-minute start before messages, feeds, or work pressure.
+
+Must include:
+
+- Direct answer for "morning affirmations to say out loud".
+- 8 spoken first-person prompts.
+- Simple morning routine.
+- CTA to `/demo?category=morning`.
+- FAQ covering camera privacy and whether to say prompts before phone use.
+
+### `/sleep-affirmations-for-a-calmer-evening`
+
+Search intent: users want calming sleep or evening affirmations.
+
+Angle: not a sleep treatment; a softer end-of-day self-talk practice.
+
+Must include:
+
+- Direct answer for "sleep affirmations".
+- 10 gentle prompts.
+- Calmer evening routine.
+- Explicit medical/sleep-treatment guardrail.
+- CTA to `/demo?category=bedtime`.
+
+### `/how-mirror-affirmations-work`
+
+Search intent: users need to understand the product before allowing camera access.
+
+Angle: explain the camera preview, on-screen prompts, no recording, and no account.
+
+Must include:
+
+- How the practice works in one minute.
+- What the web demo does and does not do.
+- Privacy and no-recording explanation.
+- CTA to `/demo`.
 
 ## Content Guardrails
 

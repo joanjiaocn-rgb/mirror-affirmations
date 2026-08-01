@@ -175,6 +175,27 @@ export default function HomePage() {
           <TrackedLink href="/bedtime-affirmations" eventName="learn_link_clicked" eventProperties={{ slug: "bedtime-affirmations" }}>
             Bedtime affirmations
           </TrackedLink>
+          <TrackedLink
+            href="/morning-affirmations-to-say-out-loud"
+            eventName="learn_link_clicked"
+            eventProperties={{ slug: "morning-affirmations-to-say-out-loud" }}
+          >
+            Morning affirmations to say out loud
+          </TrackedLink>
+          <TrackedLink
+            href="/sleep-affirmations-for-a-calmer-evening"
+            eventName="learn_link_clicked"
+            eventProperties={{ slug: "sleep-affirmations-for-a-calmer-evening" }}
+          >
+            Sleep affirmations for a calmer evening
+          </TrackedLink>
+          <TrackedLink
+            href="/how-mirror-affirmations-work"
+            eventName="learn_link_clicked"
+            eventProperties={{ slug: "how-mirror-affirmations-work" }}
+          >
+            How Mirror Affirmations work
+          </TrackedLink>
           <TrackedLink href="/positive-self-talk" eventName="learn_link_clicked" eventProperties={{ slug: "positive-self-talk" }}>
             Positive self-talk
           </TrackedLink>

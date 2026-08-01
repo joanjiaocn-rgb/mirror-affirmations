@@ -105,7 +105,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                 <Link href="/demo">Demo</Link>
                 <Link href="/mirror-affirmations">Mirror Affirmations</Link>
                 <Link href="/selfie-affirmations">Selfie Affirmations</Link>
+                <Link href="/morning-affirmations-to-say-out-loud">Morning Affirmations</Link>
                 <Link href="/bedtime-affirmations">Bedtime</Link>
+                <Link href="/sleep-affirmations-for-a-calmer-evening">Sleep Affirmations</Link>
+                <Link href="/how-mirror-affirmations-work">How It Works</Link>
                 <Link href="/positive-self-talk">Positive Self-Talk</Link>
                 <Link href="/waitlist">Waitlist</Link>
                 <Link href="/privacy">Privacy</Link>

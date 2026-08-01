@@ -604,6 +604,102 @@ Q: Does the demo save anything?
 
 A: No. The web demo does not record, save, or upload video.
 
+### `/morning-affirmations-to-say-out-loud`
+
+SEO title:
+
+Morning Affirmations to Say Out Loud | Mirror Affirmations
+
+Meta description:
+
+Try gentle morning affirmations to say out loud with a private mirror practice. Start slowly with short prompts and no recording in the web demo.
+
+H1:
+
+Morning Affirmations to Say Out Loud
+
+Opening answer:
+
+Morning affirmations to say out loud work best when they are short, believable, and easy to repeat before the day gets noisy.
+
+Demo CTA:
+
+Try Mirror Affirmations
+
+FAQ:
+
+Q: What are good morning affirmations to say out loud?
+
+A: Good morning affirmations are short, first-person sentences that feel believable, such as "I can begin slowly" or "One small step is enough to begin."
+
+Q: Does the demo save my morning practice?
+
+A: No. The web demo does not record, save, or upload your camera preview.
+
+### `/sleep-affirmations-for-a-calmer-evening`
+
+SEO title:
+
+Sleep Affirmations for a Calmer Evening | Mirror Affirmations
+
+Meta description:
+
+Try gentle sleep affirmations for a calmer evening routine. Use short prompts privately with no recording or video upload in the web demo.
+
+H1:
+
+Sleep Affirmations for a Calmer Evening
+
+Opening answer:
+
+Sleep affirmations for a calmer evening are short phrases you can say when the day is ending but your mind is still carrying too much.
+
+Demo CTA:
+
+Try Mirror Affirmations
+
+FAQ:
+
+Q: Are sleep affirmations a sleep treatment?
+
+A: No. They are a calming self-care routine, not a medical or sleep treatment.
+
+Q: Does the demo record or upload anything?
+
+A: No. The web demo does not record, save, or upload video.
+
+### `/how-mirror-affirmations-work`
+
+SEO title:
+
+How Mirror Affirmations Work | Private Self-Talk Practice
+
+Meta description:
+
+Learn how Mirror Affirmations works as a private browser practice with on-screen prompts, camera preview, and no recording in the web demo.
+
+H1:
+
+How Mirror Affirmations Work
+
+Opening answer:
+
+Mirror Affirmations works by combining a live camera preview, a short first-person prompt, and a private moment to say the words out loud.
+
+Demo CTA:
+
+Try Mirror Affirmations
+
+FAQ:
+
+Q: Does Mirror Affirmations record me?
+
+A: No. The web demo uses camera preview only and does not record, save, or upload video.
+
+Q: Do I need to create an account?
+
+A: No. You can open the demo and try the practice without signing in.
+
 ## 7. Privacy Page Copy
 
 URL: `/privacy`

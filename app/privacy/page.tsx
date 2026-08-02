@@ -24,7 +24,10 @@ export default function PrivacyPage() {
   return (
     <article className="article-page legal-page">
       <div className="breadcrumb">
-        <Link href="/">Home</Link> / Privacy
+        <Link href="/" title="Mirror Affirmations home">
+          Home
+        </Link>{" "}
+        / Privacy
       </div>
       <h1>Privacy</h1>
       <p className="article-intro">
@@ -62,7 +65,7 @@ export default function PrivacyPage() {
         <p>Mirror Affirmations is a self-care and reflection tool. It is not a medical, mental health, or therapy service.</p>
       </section>
 
-      <Link className="primary-button" href="/demo">
+      <Link className="primary-button" href="/demo" title="Return to the private mirror practice demo">
         <Camera size={17} aria-hidden="true" />
         Return to demo
       </Link>

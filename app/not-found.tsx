@@ -7,10 +7,10 @@ export default function NotFound() {
       <h1>This practice page is not here.</h1>
       <p>Return to the private mirror demo or start from the homepage.</p>
       <div className="hero-actions">
-        <Link className="primary-button" href="/demo">
+        <Link className="primary-button" href="/demo" title="Open the private mirror practice demo">
           Open demo
         </Link>
-        <Link className="secondary-button" href="/">
+        <Link className="secondary-button" href="/" title="Mirror Affirmations home">
           Home
         </Link>
       </div>

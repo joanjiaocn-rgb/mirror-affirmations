@@ -21,7 +21,10 @@ export default function TermsPage() {
   return (
     <article className="article-page legal-page">
       <div className="breadcrumb">
-        <Link href="/">Home</Link> / Terms
+        <Link href="/" title="Mirror Affirmations home">
+          Home
+        </Link>{" "}
+        / Terms
       </div>
       <h1>Terms</h1>
       <p className="article-intro">
@@ -50,7 +53,11 @@ export default function TermsPage() {
       <section>
         <h2>Contact</h2>
         <p>
-          For questions, contact <a href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a>.
+          For questions, contact{" "}
+          <a href={`mailto:${site.contactEmail}`} title="Email Mirror Affirmations support">
+            {site.contactEmail}
+          </a>
+          .
         </p>
       </section>
     </article>

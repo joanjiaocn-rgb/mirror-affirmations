@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight, Camera, Lock } from "lucide-react";
 import { notFound } from "next/navigation";
 import { articlePages, getArticle } from "@/lib/articles";
+import { referenceSources } from "@/lib/contentSources";
 import { absoluteUrl, site } from "@/lib/site";
 
 type Props = {
@@ -55,6 +56,13 @@ export default async function ArticleRoute({ params }: Props) {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    author: {
+      "@type": "Person",
+      name: site.editorialAuthor,
+      url: site.url
+    },
+    datePublished: site.publishedDate,
+    dateModified: site.lastUpdated,
     mainEntity: page.faqs.map((faq) => ({
       "@type": "Question",
       name: faq.question,
@@ -72,14 +80,23 @@ export default async function ArticleRoute({ params }: Props) {
     description: page.description,
     url: absoluteUrl(`/${page.slug}`),
     author: {
-      "@type": "Organization",
-      name: site.name
+      "@type": "Person",
+      name: site.editorialAuthor,
+      url: site.url
     },
     publisher: {
       "@type": "Organization",
       name: site.name,
       url: site.url
-    }
+    },
+    datePublished: site.publishedDate,
+    dateModified: site.lastUpdated,
+    mainEntityOfPage: absoluteUrl(`/${page.slug}`),
+    citation: referenceSources.map((source) => ({
+      "@type": "CreativeWork",
+      name: source.name,
+      url: source.url
+    }))
   };
 
   return (
@@ -89,11 +106,17 @@ export default async function ArticleRoute({ params }: Props) {
 
       <article className="article-page">
         <div className="breadcrumb">
-          <Link href="/">Home</Link> / {page.h1}
+          <Link href="/" title="Mirror Affirmations home">
+            Home
+          </Link>{" "}
+          / {page.h1}
         </div>
         <p className="eyebrow">Gentle self-talk guide</p>
         <h1>{page.h1}</h1>
         <p className="article-intro">{page.intro}</p>
+        <p className="content-meta">
+          By {site.editorialAuthor}. Updated August 2, 2026.
+        </p>
 
         <div className="article-cta">
           <div>
@@ -102,7 +125,7 @@ export default async function ArticleRoute({ params }: Props) {
               Your camera preview stays in your browser. The demo does not record, save, or upload video.
             </p>
           </div>
-          <Link className="primary-button" href={page.ctaHref}>
+          <Link className="primary-button" href={page.ctaHref} title={page.cta}>
             <Camera size={17} aria-hidden="true" />
             {page.cta}
           </Link>
@@ -138,6 +161,24 @@ export default async function ArticleRoute({ params }: Props) {
         </section>
 
         <section>
+          <h2>What sources inform this page?</h2>
+          <p>
+            This page uses public self-care guidance and self-affirmation research for context. It should not be read as
+            medical advice, therapy, diagnosis, crisis care, or a promise that affirmations will treat a condition.
+          </p>
+          <ul className="source-list">
+            {referenceSources.map((source) => (
+              <li key={source.url}>
+                <a href={source.url} rel="noreferrer" target="_blank" title={`Read ${source.name}`}>
+                  {source.name}
+                </a>
+                <span>{source.summary}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section>
           <h2>FAQ</h2>
           <div className="faq-list">
             {page.faqs.map((faq) => (
@@ -153,12 +194,12 @@ export default async function ArticleRoute({ params }: Props) {
           <h2>Related practice pages</h2>
           <div className="link-grid compact">
             {related.map((item) => (
-              <Link href={`/${item.slug}`} key={item.slug}>
+              <Link href={`/${item.slug}`} key={item.slug} title={`Read ${item.h1}`}>
                 {item.h1}
                 <ArrowRight size={16} aria-hidden="true" />
               </Link>
             ))}
-            <Link href="/demo">
+            <Link href="/demo" title="Open the private mirror practice demo">
               Open mirror practice
               <ArrowRight size={16} aria-hidden="true" />
             </Link>

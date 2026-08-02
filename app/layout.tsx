@@ -38,7 +38,14 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         "@type": "Organization",
         name: site.name,
         url: site.url,
-        email: site.contactEmail
+        email: site.contactEmail,
+        sameAs: [site.githubUrl]
+      },
+      {
+        "@type": "Person",
+        name: site.editorialAuthor,
+        url: site.url,
+        sameAs: [site.githubUrl]
       },
       {
         "@type": "WebSite",
@@ -53,6 +60,13 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         operatingSystem: "Any",
         url: absoluteUrl("/demo"),
         description: site.description,
+        author: {
+          "@type": "Person",
+          name: site.editorialAuthor,
+          url: site.url
+        },
+        datePublished: site.publishedDate,
+        dateModified: site.lastUpdated,
         offers: {
           "@type": "Offer",
           price: "0",
@@ -70,24 +84,25 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <div className="site-shell">
           <header className="site-header">
             <nav className="nav" aria-label="Main navigation">
-              <Link className="brand" href="/">
+              <Link className="brand" href="/" title="Mirror Affirmations home">
                 <span className="brand-mark" aria-hidden="true">M</span>
                 <span className="brand-title">Mirror Affirmations</span>
               </Link>
               <div className="nav-links">
-                <Link href="/demo">
+                <Link href="/demo" title="Open the private mirror practice demo">
                   <Camera size={16} aria-hidden="true" />
                   Demo
                 </Link>
-                <Link href="/mirror-affirmations">Affirmations</Link>
-                <Link href="/bedtime-affirmations">Bedtime</Link>
-                <Link href="/privacy">
+                <Link href="/mirror-affirmations" title="Read about mirror affirmations">Affirmations</Link>
+                <Link href="/bedtime-affirmations" title="Read bedtime affirmations">Bedtime</Link>
+                <Link href="/privacy" title="Read the privacy policy">
                   <Lock size={16} aria-hidden="true" />
                   Privacy
                 </Link>
-                <Link href="/waitlist">Waitlist</Link>
+                <Link href="/about" title="About Mirror Affirmations">About</Link>
+                <Link href="/waitlist" title="Join the Mirror Affirmations waitlist">Waitlist</Link>
               </div>
-              <Link className="nav-cta" href="/demo">
+              <Link className="nav-cta" href="/demo" title="Start private mirror practice">
                 Start practice
               </Link>
             </nav>
@@ -96,23 +111,25 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <footer className="site-footer">
             <div className="footer-inner">
               <div>
-                <Link className="footer-brand" href="/">
+                <Link className="footer-brand" href="/" title="Mirror Affirmations home">
                   Mirror Affirmations
                 </Link>
                 <p>Mirror Affirmations is a self-care practice tool, not a medical or therapy service.</p>
               </div>
               <div className="footer-links">
-                <Link href="/demo">Demo</Link>
-                <Link href="/mirror-affirmations">Mirror Affirmations</Link>
-                <Link href="/selfie-affirmations">Selfie Affirmations</Link>
-                <Link href="/morning-affirmations-to-say-out-loud">Morning Affirmations</Link>
-                <Link href="/bedtime-affirmations">Bedtime</Link>
-                <Link href="/sleep-affirmations-for-a-calmer-evening">Sleep Affirmations</Link>
-                <Link href="/how-mirror-affirmations-work">How It Works</Link>
-                <Link href="/positive-self-talk">Positive Self-Talk</Link>
-                <Link href="/waitlist">Waitlist</Link>
-                <Link href="/privacy">Privacy</Link>
-                <Link href="/terms">Terms</Link>
+                <Link href="/demo" title="Open the private mirror practice demo">Demo</Link>
+                <Link href="/mirror-affirmations" title="Read about mirror affirmations">Mirror Affirmations</Link>
+                <Link href="/selfie-affirmations" title="Read about selfie affirmations">Selfie Affirmations</Link>
+                <Link href="/morning-affirmations-to-say-out-loud" title="Read morning affirmations to say out loud">Morning Affirmations</Link>
+                <Link href="/bedtime-affirmations" title="Read bedtime affirmations">Bedtime</Link>
+                <Link href="/sleep-affirmations-for-a-calmer-evening" title="Read sleep affirmations for a calmer evening">Sleep Affirmations</Link>
+                <Link href="/how-mirror-affirmations-work" title="Read how Mirror Affirmations works">How It Works</Link>
+                <Link href="/positive-self-talk" title="Read about positive self-talk">Positive Self-Talk</Link>
+                <Link href="/about" title="About Mirror Affirmations">About</Link>
+                <Link href="/contact" title="Contact Mirror Affirmations">Contact</Link>
+                <Link href="/waitlist" title="Join the Mirror Affirmations waitlist">Waitlist</Link>
+                <Link href="/privacy" title="Read the privacy policy">Privacy</Link>
+                <Link href="/terms" title="Read the terms of use">Terms</Link>
               </div>
             </div>
           </footer>

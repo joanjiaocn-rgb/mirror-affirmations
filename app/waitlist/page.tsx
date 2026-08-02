@@ -40,7 +40,7 @@ export default function WaitlistPage() {
             app.
           </p>
           <div className="hero-actions">
-            <Link className="secondary-button" href="/demo">
+            <Link className="secondary-button" href="/demo" title="Try the private mirror practice demo first">
               <Camera size={17} aria-hidden="true" />
               Try the demo first
             </Link>

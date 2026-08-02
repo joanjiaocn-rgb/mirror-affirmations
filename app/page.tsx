@@ -2,7 +2,9 @@ import Link from "next/link";
 import { ArrowRight, Camera, CheckCircle2, Lock, MessageCircle } from "lucide-react";
 import { TrackedLink } from "@/components/TrackedLink";
 import { WaitlistForm } from "@/components/WaitlistForm";
+import { practiceDataPoints, referenceSources } from "@/lib/contentSources";
 import { categories } from "@/lib/prompts";
+import { site } from "@/lib/site";
 
 const howItWorks = [
   "Choose a prompt that fits your moment.",
@@ -11,9 +13,99 @@ const howItWorks = [
   "Stop when it feels complete."
 ];
 
+const homeFaqs = [
+  {
+    question: "What is Mirror Affirmations?",
+    answer:
+      "Mirror Affirmations is a private browser practice for saying short, gentle self-talk prompts while using an optional live camera preview."
+  },
+  {
+    question: "Does Mirror Affirmations record video?",
+    answer:
+      "No. The current web demo does not record, save, or upload video, audio, camera frames, face data, or prompt recordings."
+  },
+  {
+    question: "Is Mirror Affirmations a therapy app?",
+    answer:
+      "No. It is a self-care and reflection tool, not therapy, diagnosis, medical advice, crisis care, or emergency support."
+  }
+];
+
 export default function HomePage() {
+  const homeJsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": `${site.url}/#article`,
+        headline: "Mirror Affirmations: private self-talk practice with no recording",
+        description: site.description,
+        author: {
+          "@type": "Person",
+          name: site.editorialAuthor,
+          url: site.url
+        },
+        publisher: {
+          "@type": "Organization",
+          name: site.name,
+          url: site.url
+        },
+        datePublished: site.publishedDate,
+        dateModified: site.lastUpdated,
+        mainEntityOfPage: site.url,
+        about: ["mirror affirmations", "self-talk", "self-care", "private camera preview"],
+        citation: referenceSources.map((source) => ({
+          "@type": "CreativeWork",
+          name: source.name,
+          url: source.url
+        }))
+      },
+      {
+        "@type": "FAQPage",
+        "@id": `${site.url}/#faq`,
+        author: {
+          "@type": "Person",
+          name: site.editorialAuthor,
+          url: site.url
+        },
+        datePublished: site.publishedDate,
+        dateModified: site.lastUpdated,
+        mainEntity: homeFaqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.answer
+          }
+        }))
+      },
+      {
+        "@type": "HowTo",
+        "@id": `${site.url}/#how-to-practice`,
+        name: "How to practice mirror affirmations privately",
+        description: "A short no-recording mirror affirmation practice with an optional browser camera preview.",
+        author: {
+          "@type": "Person",
+          name: site.editorialAuthor,
+          url: site.url
+        },
+        datePublished: site.publishedDate,
+        dateModified: site.lastUpdated,
+        totalTime: "PT1M",
+        step: howItWorks.map((step, index) => ({
+          "@type": "HowToStep",
+          position: index + 1,
+          name: step,
+          text: step
+        }))
+      }
+    ]
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(homeJsonLd) }} />
+
       <section className="hero-section">
         <div className="hero-copy">
           <p className="eyebrow">A quiet practice for ordinary days</p>
@@ -26,14 +118,24 @@ export default function HomePage() {
             Open your camera, choose a prompt, and read it out loud while looking at yourself. The web demo is
             practice-only: it does not record, save, or upload video.
           </p>
+          <p className="content-meta">
+            By {site.editorialAuthor}. Updated August 2, 2026.
+          </p>
           <div className="hero-actions">
-            <TrackedLink className="primary-button" href="/demo" eventName="homepage_demo_clicked" eventProperties={{ position: "hero" }}>
+            <TrackedLink
+              className="primary-button"
+              href="/demo"
+              title="Start the private mirror practice demo"
+              eventName="homepage_demo_clicked"
+              eventProperties={{ position: "hero" }}
+            >
               <Camera size={18} aria-hidden="true" />
               Start private practice
             </TrackedLink>
             <TrackedLink
               className="secondary-button"
               href="/waitlist"
+              title="Join the Mirror Affirmations waitlist"
               eventName="homepage_waitlist_clicked"
               eventProperties={{ position: "hero" }}
             >
@@ -75,7 +177,12 @@ export default function HomePage() {
                 <Lock size={14} aria-hidden="true" />
                 Browser only
               </span>
-              <TrackedLink href="/demo" eventName="preview_demo_clicked" eventProperties={{ position: "hero_preview" }}>
+              <TrackedLink
+                href="/demo"
+                title="Open the private mirror practice demo"
+                eventName="preview_demo_clicked"
+                eventProperties={{ position: "hero_preview" }}
+              >
                 <Camera size={16} aria-hidden="true" />
                 Open practice
               </TrackedLink>
@@ -87,7 +194,7 @@ export default function HomePage() {
       <section className="content-band">
         <div className="section-heading">
           <p className="eyebrow">Why it feels different</p>
-          <h2>Not just another quote app</h2>
+          <h2>What makes Mirror Affirmations different?</h2>
           <p>
             Most affirmation apps ask you to read a sentence and move on. Mirror Affirmations makes the practice more
             personal: you see your own face, slow down, and say the words out loud in a private space.
@@ -118,7 +225,7 @@ export default function HomePage() {
       <section className="content-band split-band">
         <div>
           <p className="eyebrow">How it works</p>
-          <h2>A 60-second mirror practice</h2>
+          <h2>How does a 60-second mirror practice work?</h2>
           <p>
             The first version is intentionally small. You do not need a profile, a streak, or a saved recording to find
             out whether this kind of self-talk feels useful.
@@ -134,10 +241,44 @@ export default function HomePage() {
         </ol>
       </section>
 
+      <section className="content-band answer-band" id="quick-answers">
+        <div className="section-heading">
+          <p className="eyebrow">Direct answers</p>
+          <h2>What should I know before trying it?</h2>
+          <p>
+            The demo is intentionally small: a private preview, short prompts, no account, and no saved recording in
+            the web version.
+          </p>
+        </div>
+        <div className="answer-grid">
+          {homeFaqs.map((faq) => (
+            <article className="answer-card" key={faq.question}>
+              <h3>{faq.question}</h3>
+              <p>{faq.answer}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="content-band data-band" id="practice-data">
+        <div className="section-heading">
+          <p className="eyebrow">Data and boundaries</p>
+          <h2>What concrete details describe the practice?</h2>
+        </div>
+        <div className="data-grid">
+          {practiceDataPoints.map((point) => (
+            <article className="data-card" key={point.stat}>
+              <strong>{point.stat}</strong>
+              <span>{point.detail}</span>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section className="content-band">
         <div className="section-heading">
           <p className="eyebrow">Prompt categories</p>
-          <h2>Prompts for real moments</h2>
+          <h2>Which prompt should I start with?</h2>
         </div>
         <div className="category-grid">
           {categories.map((category, index) => (
@@ -145,6 +286,7 @@ export default function HomePage() {
               className="category-row"
               href={`/demo?category=${category.id}`}
               key={category.id}
+              title={`Try ${category.label} prompts`}
               eventName="category_link_clicked"
               eventProperties={{ category: category.id }}
             >
@@ -163,20 +305,36 @@ export default function HomePage() {
       <section className="content-band related-band">
         <div className="section-heading">
           <p className="eyebrow">Learn and practice</p>
-          <h2>Start where the words fit</h2>
+          <h2>Where should I go next?</h2>
         </div>
         <div className="link-grid">
-          <TrackedLink href="/mirror-affirmations" eventName="learn_link_clicked" eventProperties={{ slug: "mirror-affirmations" }}>
+          <TrackedLink
+            href="/mirror-affirmations"
+            title="Read about mirror affirmations"
+            eventName="learn_link_clicked"
+            eventProperties={{ slug: "mirror-affirmations" }}
+          >
             Mirror affirmations
           </TrackedLink>
-          <TrackedLink href="/selfie-affirmations" eventName="learn_link_clicked" eventProperties={{ slug: "selfie-affirmations" }}>
+          <TrackedLink
+            href="/selfie-affirmations"
+            title="Read about selfie affirmations"
+            eventName="learn_link_clicked"
+            eventProperties={{ slug: "selfie-affirmations" }}
+          >
             Selfie affirmations
           </TrackedLink>
-          <TrackedLink href="/bedtime-affirmations" eventName="learn_link_clicked" eventProperties={{ slug: "bedtime-affirmations" }}>
+          <TrackedLink
+            href="/bedtime-affirmations"
+            title="Read bedtime affirmations"
+            eventName="learn_link_clicked"
+            eventProperties={{ slug: "bedtime-affirmations" }}
+          >
             Bedtime affirmations
           </TrackedLink>
           <TrackedLink
             href="/morning-affirmations-to-say-out-loud"
+            title="Read morning affirmations to say out loud"
             eventName="learn_link_clicked"
             eventProperties={{ slug: "morning-affirmations-to-say-out-loud" }}
           >
@@ -184,6 +342,7 @@ export default function HomePage() {
           </TrackedLink>
           <TrackedLink
             href="/sleep-affirmations-for-a-calmer-evening"
+            title="Read sleep affirmations for a calmer evening"
             eventName="learn_link_clicked"
             eventProperties={{ slug: "sleep-affirmations-for-a-calmer-evening" }}
           >
@@ -191,27 +350,64 @@ export default function HomePage() {
           </TrackedLink>
           <TrackedLink
             href="/how-mirror-affirmations-work"
+            title="Read how Mirror Affirmations works"
             eventName="learn_link_clicked"
             eventProperties={{ slug: "how-mirror-affirmations-work" }}
           >
             How Mirror Affirmations work
           </TrackedLink>
-          <TrackedLink href="/positive-self-talk" eventName="learn_link_clicked" eventProperties={{ slug: "positive-self-talk" }}>
+          <TrackedLink
+            href="/positive-self-talk"
+            title="Read about positive self-talk"
+            eventName="learn_link_clicked"
+            eventProperties={{ slug: "positive-self-talk" }}
+          >
             Positive self-talk
           </TrackedLink>
-          <TrackedLink href="/self-love-affirmations" eventName="learn_link_clicked" eventProperties={{ slug: "self-love-affirmations" }}>
+          <TrackedLink
+            href="/self-love-affirmations"
+            title="Read self love affirmations"
+            eventName="learn_link_clicked"
+            eventProperties={{ slug: "self-love-affirmations" }}
+          >
             Self love affirmations
           </TrackedLink>
-          <TrackedLink href="/work-stress-affirmations" eventName="learn_link_clicked" eventProperties={{ slug: "work-stress-affirmations" }}>
+          <TrackedLink
+            href="/work-stress-affirmations"
+            title="Read affirmations for work stress"
+            eventName="learn_link_clicked"
+            eventProperties={{ slug: "work-stress-affirmations" }}
+          >
             Work stress affirmations
           </TrackedLink>
         </div>
       </section>
 
+      <section className="content-band source-band" id="sources">
+        <div className="section-heading">
+          <p className="eyebrow">Sources</p>
+          <h2>What sources guide this self-care content?</h2>
+          <p>
+            Mirror Affirmations uses research and public-health sources for safety boundaries and self-care context.
+            It does not claim to treat anxiety, depression, insomnia, trauma, or any mental health condition.
+          </p>
+        </div>
+        <ul className="source-list">
+          {referenceSources.map((source) => (
+            <li key={source.url}>
+              <a href={source.url} rel="noreferrer" target="_blank" title={`Read ${source.name}`}>
+                {source.name}
+              </a>
+              <span>{source.summary}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
       <section className="waitlist-band" id="waitlist">
         <div>
           <p className="eyebrow">Future local video app</p>
-          <h2>Want the local video app?</h2>
+          <h2>Do you want the local video app?</h2>
           <p>
             The first web demo is practice-only. Join the waitlist if you want the future iOS app with local recording,
             private history, reminders, and device-protected storage.

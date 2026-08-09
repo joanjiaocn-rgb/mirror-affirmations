@@ -10,5 +10,12 @@ export const articleRoutes = [
   "/how-mirror-affirmations-work",
   "/self-love-affirmations",
   "/positive-self-talk",
-  "/work-stress-affirmations"
+  "/work-stress-affirmations",
+  "/mirror-affirmations-for-self-love",
+  "/mirror-affirmations-for-anxiety",
+  "/morning-mirror-affirmations",
+  "/positive-self-talk-exercises",
+  "/self-compassion-affirmations",
+  "/how-to-practice-mirror-work",
+  "/affirmations-to-say-to-yourself-in-the-mirror"
 ];

@@ -115,7 +115,7 @@ export default async function ArticleRoute({ params }: Props) {
         <h1>{page.h1}</h1>
         <p className="article-intro">{page.intro}</p>
         <p className="content-meta">
-          By {site.editorialAuthor}. Updated August 2, 2026.
+          By {site.editorialAuthor}. Updated August 9, 2026.
         </p>
 
         <div className="article-cta">

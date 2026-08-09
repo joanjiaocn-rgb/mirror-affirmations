@@ -119,7 +119,7 @@ export default function HomePage() {
             practice-only: it does not record, save, or upload video.
           </p>
           <p className="content-meta">
-            By {site.editorialAuthor}. Updated August 2, 2026.
+            By {site.editorialAuthor}. Updated August 9, 2026.
           </p>
           <div className="hero-actions">
             <TrackedLink
@@ -379,6 +379,62 @@ export default function HomePage() {
             eventProperties={{ slug: "work-stress-affirmations" }}
           >
             Work stress affirmations
+          </TrackedLink>
+          <TrackedLink
+            href="/mirror-affirmations-for-self-love"
+            title="Read mirror affirmations for self love"
+            eventName="learn_link_clicked"
+            eventProperties={{ slug: "mirror-affirmations-for-self-love" }}
+          >
+            Mirror affirmations for self love
+          </TrackedLink>
+          <TrackedLink
+            href="/mirror-affirmations-for-anxiety"
+            title="Read mirror affirmations for anxiety"
+            eventName="learn_link_clicked"
+            eventProperties={{ slug: "mirror-affirmations-for-anxiety" }}
+          >
+            Mirror affirmations for anxiety
+          </TrackedLink>
+          <TrackedLink
+            href="/morning-mirror-affirmations"
+            title="Read morning mirror affirmations"
+            eventName="learn_link_clicked"
+            eventProperties={{ slug: "morning-mirror-affirmations" }}
+          >
+            Morning mirror affirmations
+          </TrackedLink>
+          <TrackedLink
+            href="/positive-self-talk-exercises"
+            title="Read positive self-talk exercises"
+            eventName="learn_link_clicked"
+            eventProperties={{ slug: "positive-self-talk-exercises" }}
+          >
+            Positive self-talk exercises
+          </TrackedLink>
+          <TrackedLink
+            href="/self-compassion-affirmations"
+            title="Read self compassion affirmations"
+            eventName="learn_link_clicked"
+            eventProperties={{ slug: "self-compassion-affirmations" }}
+          >
+            Self compassion affirmations
+          </TrackedLink>
+          <TrackedLink
+            href="/how-to-practice-mirror-work"
+            title="Read how to practice mirror work"
+            eventName="learn_link_clicked"
+            eventProperties={{ slug: "how-to-practice-mirror-work" }}
+          >
+            How to practice mirror work
+          </TrackedLink>
+          <TrackedLink
+            href="/affirmations-to-say-to-yourself-in-the-mirror"
+            title="Read affirmations to say to yourself in the mirror"
+            eventName="learn_link_clicked"
+            eventProperties={{ slug: "affirmations-to-say-to-yourself-in-the-mirror" }}
+          >
+            Affirmations to say in the mirror
           </TrackedLink>
         </div>
       </section>

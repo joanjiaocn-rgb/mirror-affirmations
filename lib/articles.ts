@@ -24,15 +24,15 @@ export type ArticlePage = {
 export const articlePages: ArticlePage[] = [
   {
     slug: "mirror-affirmations",
-    title: "Mirror Affirmations | Private Mirror Work Practice",
+    title: "Mirror Affirmations | Private No-Recording Practice",
     description:
-      "Learn how to practice mirror affirmations privately with gentle first-person prompts and a no-recording browser mirror demo.",
+      "Learn what mirror affirmations are and try a private no-recording mirror practice with gentle first-person prompts.",
     h1: "Mirror Affirmations",
     intro:
-      "Mirror affirmations are short phrases you say while looking at yourself. The point is not to perform confidence. The point is to slow down long enough to speak to yourself with a little more care.",
+      "Mirror affirmations are short phrases you say while looking at yourself in a mirror or private camera preview. The point is not to perform confidence. The point is to slow down, see your own face, and speak one believable line with a little more care.",
     cta: "Try the private mirror demo",
-    ctaHref: "/demo?category=bedtime",
-    category: "bedtime",
+    ctaHref: "/demo",
+    category: "self_doubt",
     prompts: [
       "I can speak to myself softly.",
       "I do not have to solve everything right now.",
@@ -45,17 +45,31 @@ export const articlePages: ArticlePage[] = [
     ],
     sections: [
       {
-        heading: "How to practice",
+        heading: "How to practice mirror affirmations",
         body: [
-          "Choose one sentence that feels believable, not impressive. Look at yourself for a few seconds, read the line out loud, and stop before it turns into a performance.",
-          "If seeing yourself feels too much today, use no-camera practice mode. The practice still counts when it helps you speak with less harshness."
+          "Choose one sentence that feels believable, not impressive. Look at yourself for a few seconds, read the line out loud in a normal voice, then pause before deciding whether to repeat it.",
+          "Keep the first session short. A 30- to 60-second mirror affirmation practice is enough when you are testing whether the words feel useful or too forced."
         ]
       },
       {
-        heading: "Why the camera changes the feeling",
+        heading: "Mirror affirmations vs. quote apps",
         body: [
-          "A written affirmation can stay abstract. A mirror practice makes the sentence more direct because you are giving the words to the person in front of you.",
-          "The web demo keeps this private. It uses the camera for live preview only and does not record, save, or upload video."
+          "A quote app can be easy to scroll past because the sentence stays abstract. Mirror affirmations make the words more direct: you are saying them to the person in front of you.",
+          "That can feel awkward at first. Awkward does not mean the practice is failing. It may simply mean you are not used to hearing your own voice speak with less harshness."
+        ]
+      },
+      {
+        heading: "Use camera preview only if it helps",
+        body: [
+          "Mirror Affirmations uses the camera like a private mirror, so the prompt can stay visible while you practice. The web demo uses live preview only and does not record, save, or upload video.",
+          "If seeing yourself feels too much today, use no-camera practice mode. The practice still counts when it helps you choose a kinder sentence."
+        ]
+      },
+      {
+        heading: "A 60-second mirror affirmation routine",
+        body: [
+          "Start with one breath, choose one prompt, say it once, and notice your reaction. If the sentence feels fake, make it smaller instead of forcing belief.",
+          "End before the routine turns into pressure. One honest line is a complete mirror practice."
         ]
       }
     ],
@@ -71,6 +85,10 @@ export const articlePages: ArticlePage[] = [
       {
         question: "Can I use the demo without recording?",
         answer: "Yes. The web demo is no-recording by default."
+      },
+      {
+        question: "How long should a mirror affirmation practice take?",
+        answer: "One minute is enough for a first session. Choose one prompt, say it once or twice, and stop before it becomes pressure."
       }
     ],
     related: ["how-mirror-affirmations-work", "selfie-affirmations", "positive-self-talk"]
@@ -456,12 +474,12 @@ export const articlePages: ArticlePage[] = [
   },
   {
     slug: "positive-self-talk",
-    title: "Positive Self-Talk Practice | Private Mirror Exercise",
+    title: "Positive Self-Talk Mirror Practice | Private Exercise",
     description:
-      "Try a private positive self-talk exercise with short, spoken prompts and a no-recording mirror demo.",
-    h1: "Positive Self-Talk Practice",
+      "Try positive self-talk in the mirror with short spoken prompts, a 60-second practice, and a private no-recording demo.",
+    h1: "Positive Self-Talk Mirror Practice",
     intro:
-      "Positive self-talk is the practice of changing the way you speak to yourself. It does not have to be loud or overly confident. A useful sentence can be quiet, honest, and repeatable.",
+      "Positive self-talk in the mirror means saying one kind, specific line while seeing your own face, instead of silently reading affirmations like quotes. It does not have to be loud or overly confident. A useful sentence can be quiet, honest, and repeatable.",
     cta: "Open mirror practice",
     ctaHref: "/demo?category=low_mood",
     category: "low_mood",
@@ -470,14 +488,38 @@ export const articlePages: ArticlePage[] = [
       "I can take one breath before I decide what this means about me.",
       "I do not have to turn this mistake into my identity.",
       "I can try again without attacking myself.",
-      "I can choose the next small step."
+      "I can choose the next small step.",
+      "I can be honest without being cruel.",
+      "This moment is hard, and I do not have to make it harder.",
+      "I can speak to myself like someone I care about."
     ],
     sections: [
       {
-        heading: "Use honesty before optimism",
+        heading: "What positive self-talk in the mirror means",
         body: [
-          "A useful self-talk line can admit that something is hard. The shift is in how you respond to yourself after naming it.",
-          "The mirror practice turns the sentence into something spoken, visible, and harder to rush past."
+          "Positive self-talk is not pretending everything is fine. A useful line can admit that something is hard, then change the way you respond to yourself after naming it.",
+          "The mirror practice turns the sentence into something spoken, visible, and harder to rush past. You hear your own voice while seeing the person the words are meant for."
+        ]
+      },
+      {
+        heading: "A 60-second self-talk exercise",
+        body: [
+          "Choose one prompt, look at yourself for a few seconds, and say the line once in a normal voice. Pause long enough to notice whether your body rejects the sentence, softens around it, or wants a smaller version.",
+          "If the sentence feels too big, edit it down. 'I am confident' might become 'I can take the next small step.' Honest positive self-talk usually works better than dramatic positive self-talk."
+        ]
+      },
+      {
+        heading: "When to use this practice",
+        body: [
+          "Try it after a mistake, before a stressful task, when comparison gets loud, or when your inner voice starts using words you would not use with a friend.",
+          "This is a private self-care exercise, not therapy or crisis support. Use it as a small reset, and seek appropriate help when a moment needs more than a prompt."
+        ]
+      },
+      {
+        heading: "Why privacy matters",
+        body: [
+          "Positive self-talk can feel vulnerable because you are practicing a different tone with yourself. The web demo keeps the session private: it does not record, save, or upload video.",
+          "You can also practice without camera access. The useful part is choosing a kinder sentence and saying it slowly enough to hear it."
         ]
       }
     ],
@@ -488,11 +530,15 @@ export const articlePages: ArticlePage[] = [
       },
       {
         question: "Why practice with a mirror?",
-        answer: "Seeing yourself can make the words feel more direct and less abstract."
+        answer: "Seeing yourself can make the words feel more direct and less abstract because you are giving the sentence to the person in front of you."
       },
       {
         question: "What if I feel awkward?",
         answer: "That is common. Start with one short sentence and stop there."
+      },
+      {
+        question: "Does the mirror demo record my self-talk practice?",
+        answer: "No. The web demo uses camera preview only if you turn it on, and it does not record, save, or upload video."
       }
     ],
     related: ["mirror-affirmations", "bedtime-affirmations", "work-stress-affirmations"]

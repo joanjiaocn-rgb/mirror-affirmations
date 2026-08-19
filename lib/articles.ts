@@ -24,9 +24,9 @@ export type ArticlePage = {
 export const articlePages: ArticlePage[] = [
   {
     slug: "mirror-affirmations",
-    title: "Mirror Affirmations | Private No-Recording Practice",
+    title: "Mirror Affirmations | Private Mirror Practice",
     description:
-      "Learn what mirror affirmations are and try a private no-recording mirror practice with gentle first-person prompts.",
+      "Learn what mirror affirmations are and try a private no-recording mirror practice with gentle prompts, simple steps, and a browser demo.",
     h1: "Mirror Affirmations",
     intro:
       "Mirror affirmations are short phrases you say while looking at yourself in a mirror or private camera preview. The point is not to perform confidence. The point is to slow down, see your own face, and speak one believable line with a little more care.",
@@ -474,9 +474,9 @@ export const articlePages: ArticlePage[] = [
   },
   {
     slug: "positive-self-talk",
-    title: "Positive Self-Talk Mirror Practice | Private Exercise",
+    title: "Positive Self-Talk Mirror Practice | Mirror Affirmations",
     description:
-      "Try positive self-talk in the mirror with short spoken prompts, a 60-second practice, and a private no-recording demo.",
+      "Try positive self-talk in the mirror with short spoken prompts, a 60-second practice, and a private no-recording browser demo for gentle self-care.",
     h1: "Positive Self-Talk Mirror Practice",
     intro:
       "Positive self-talk in the mirror means saying one kind, specific line while seeing your own face, instead of silently reading affirmations like quotes. It does not have to be loud or overly confident. A useful sentence can be quiet, honest, and repeatable.",

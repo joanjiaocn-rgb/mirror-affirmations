@@ -4,14 +4,14 @@ import { Camera } from "lucide-react";
 import { absoluteUrl, site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Privacy | Mirror Affirmations",
+  title: "Privacy",
   description:
     "Read how Mirror Affirmations handles camera preview, waitlist emails, analytics, and privacy in the no-recording web demo.",
   alternates: {
     canonical: "/privacy"
   },
   openGraph: {
-    title: "Privacy | Mirror Affirmations",
+    title: "Privacy",
     description:
       "Read how Mirror Affirmations handles camera preview, waitlist emails, analytics, and privacy in the no-recording web demo.",
     url: absoluteUrl("/privacy"),

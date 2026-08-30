@@ -4,14 +4,14 @@ import { Mail } from "lucide-react";
 import { absoluteUrl, site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Contact Mirror Affirmations",
+  title: "Contact",
   description:
     "Contact Mirror Affirmations for privacy questions, product feedback, waitlist questions, or corrections to self-care content.",
   alternates: {
     canonical: "/contact"
   },
   openGraph: {
-    title: "Contact Mirror Affirmations",
+    title: "Contact",
     description:
       "Contact Mirror Affirmations for privacy questions, product feedback, waitlist questions, or corrections to self-care content.",
     url: absoluteUrl("/contact"),

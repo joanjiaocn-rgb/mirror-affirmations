@@ -1029,13 +1029,13 @@ export const articlePages: ArticlePage[] = [
   },
   {
     slug: "affirmations-to-say-to-yourself-in-the-mirror",
-    title: "Affirmations to Say to Yourself in the Mirror | Examples",
+    title: "25 Affirmations to Say to Yourself in the Mirror",
     description:
-      "Find gentle affirmations to say to yourself in the mirror, with examples for morning, bedtime, self-doubt, work stress, and private practice.",
-    h1: "Affirmations to Say to Yourself in the Mirror",
+      "Try 25 affirmations to say to yourself in the mirror, with gentle examples for morning, self-love, work stress, bedtime, and private practice.",
+    h1: "25 Affirmations to Say to Yourself in the Mirror",
     intro:
-      "The best affirmations to say to yourself in the mirror are short, honest, and easy to speak out loud. They should feel like a sentence you can offer yourself, not a slogan you have to perform.",
-    cta: "Try these prompts in the demo",
+      "The best affirmations to say to yourself in the mirror are short, honest, and easy to speak out loud. This guide is for people who want something quieter than a quote app: one believable sentence, one private mirror moment, and no pressure to perform confidence.",
+    cta: "Practice these affirmations privately",
     ctaHref: "/demo",
     category: "self_doubt",
     prompts: [
@@ -1048,64 +1048,104 @@ export const articlePages: ArticlePage[] = [
       "I can meet myself where I am.",
       "I am still here, and that matters.",
       "I can let this day be enough.",
-      "I can speak to myself like someone I care about."
+      "I can speak to myself like someone I care about.",
+      "I do not have to turn this mistake into my identity.",
+      "I can be unfinished and still worthy of care.",
+      "My pace is allowed to be slower today.",
+      "I can pause before I believe the harshest thought.",
+      "I can choose one kind sentence right now.",
+      "This face belongs to someone who is trying.",
+      "I can let awkwardness be part of the practice.",
+      "I can begin again without shaming myself.",
+      "I can leave work voices at work.",
+      "I am more than one difficult day.",
+      "I can put this day down for now.",
+      "Rest is allowed before everything is finished.",
+      "I can take a breath before I answer the world.",
+      "I can be on my own side this morning.",
+      "One honest line is enough for today."
     ],
     sections: [
       {
+        heading: "Quick answer",
+        body: [
+          "If you are wondering what to say to yourself in the mirror, start with one sentence that is kind and believable. A useful mirror affirmation should sound like something you can actually say out loud, not a slogan you immediately reject.",
+          "Use the 25 prompts above as a menu. Pick one, look at yourself for a few seconds, say it once in a normal voice, and stop before the practice becomes another thing to get right."
+        ]
+      },
+      {
+        heading: "What if it feels awkward?",
+        body: [
+          "Feeling awkward is normal. Looking at yourself while speaking kindly can feel more direct than reading affirmations silently, especially if your usual self-talk is sharp.",
+          "Make the line smaller if it feels fake. 'I love everything about myself' might become 'I can be less harsh with myself for one minute.' The smaller sentence is often the better practice."
+        ]
+      },
+      {
         heading: "Mirror affirmations for the morning",
         body: [
-          "Use morning lines that help you begin without pressure: 'I can begin slowly,' 'One small step is enough,' or 'I can be on my own side this morning.'",
-          "Say one line before checking messages. This helps the practice stay simple and prevents it from becoming another item on your list."
+          "Use morning lines that help you begin without pressure: 'I can begin slowly,' 'I can take a breath before I answer the world,' or 'I can be on my own side this morning.'",
+          "Say one line before checking messages, email, or feeds. This gives your own voice a chance to arrive before the day starts asking for things."
+        ]
+      },
+      {
+        heading: "Mirror affirmations for self-love",
+        body: [
+          "Self-love mirror affirmations work best when they are realistic. Try: 'I can be unfinished and still worthy of care,' 'I can choose one kind sentence right now,' or 'This face belongs to someone who is trying.'",
+          "Avoid turning self-love into a test. You do not have to feel transformed. A softer sentence is already a different kind of relationship with yourself."
         ]
       },
       {
         heading: "Mirror affirmations for self-doubt",
         body: [
-          "When self-doubt is loud, avoid exaggerated confidence claims. Try: 'I am allowed to be unfinished,' 'I can learn without shaming myself,' or 'I do not have to become someone else to matter.'",
-          "These lines work because they make room for growth without insulting the version of you who is here now."
+          "When self-doubt is loud, avoid exaggerated confidence claims. Try: 'I can pause before I believe the harshest thought,' 'I can begin again without shaming myself,' or 'One hard moment does not define me.'",
+          "These lines make room for growth without insulting the version of you who is here now."
         ]
       },
       {
         heading: "Mirror affirmations for a hard work day",
         body: [
-          "After work stress, try separating your worth from one moment: 'One hard day does not define me,' 'Being corrected does not mean I am broken,' or 'I can leave work voices at work.'",
+          "After work stress, try separating your worth from one moment: 'I can leave work voices at work,' 'I am more than one difficult day,' or 'I do not have to turn this mistake into my identity.'",
           "The goal is not to erase what happened. It is to stop carrying the harshest interpretation into the rest of your day."
         ]
       },
       {
         heading: "Mirror affirmations for bedtime",
         body: [
-          "At night, choose prompts that let the day end: 'I can put this day down for now,' 'Rest is allowed before everything is finished,' or 'Nothing else is required from me right now.'",
-          "Bedtime prompts should reduce pressure. If a line feels demanding, choose a softer one."
+          "At night, choose prompts that let the day end: 'I can put this day down for now,' 'Rest is allowed before everything is finished,' or 'One honest line is enough for today.'",
+          "Bedtime prompts should reduce pressure. If a line feels demanding, choose a softer one and keep the practice under one minute."
         ]
       },
       {
-        heading: "How to make any affirmation easier to say",
+        heading: "How to say mirror affirmations privately",
         body: [
           "Use first-person language, keep the sentence short, and avoid words that feel fake in your mouth. The more ordinary the sentence sounds, the easier it is to repeat.",
-          "You can practice with the browser mirror demo or without camera access. The web demo does not record, save, or upload video."
+          "You can practice with the browser mirror demo or without camera access. The web demo does not record, save, or upload video, so the moment stays private while you test what feels useful."
         ]
       }
     ],
     faqs: [
       {
         question: "What should I say to myself in the mirror?",
-        answer: "Start with one short, believable line, such as 'I can be gentle with myself today' or 'One hard moment does not define me.'"
+        answer: "Start with one short, believable line, such as 'I can be gentle with myself today,' 'One hard moment does not define me,' or 'I can speak to myself like someone I care about.'"
       },
       {
         question: "How many mirror affirmations should I say?",
-        answer: "One to three is enough. A short practice is easier to repeat and less likely to feel forced."
+        answer: "One to three is enough for a daily practice. This page gives 25 examples so you can choose the sentence that fits the moment."
       },
       {
         question: "Should affirmations be first person?",
         answer: "First-person prompts often feel more direct for mirror practice because you are speaking to yourself in your own voice."
       },
       {
+        question: "Why do mirror affirmations feel awkward?",
+        answer: "They can feel awkward because the words are no longer abstract. You are seeing yourself while saying them, which makes the practice more direct."
+      },
+      {
         question: "Can I use these prompts privately online?",
         answer: "Yes. Mirror Affirmations offers a private browser demo with no recording or video upload."
       }
     ],
-    related: ["morning-mirror-affirmations", "bedtime-affirmations", "work-stress-affirmations"]
+    related: ["mirror-affirmations", "morning-mirror-affirmations", "positive-self-talk"]
   }
 ];
 

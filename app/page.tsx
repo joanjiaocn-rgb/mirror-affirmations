@@ -309,6 +309,14 @@ export default function HomePage() {
         </div>
         <div className="link-grid">
           <TrackedLink
+            href="/affirmations-to-say-to-yourself-in-the-mirror"
+            title="Read 25 affirmations to say to yourself in the mirror"
+            eventName="learn_link_clicked"
+            eventProperties={{ slug: "affirmations-to-say-to-yourself-in-the-mirror" }}
+          >
+            25 affirmations to say to yourself in the mirror
+          </TrackedLink>
+          <TrackedLink
             href="/mirror-affirmations"
             title="Read about mirror affirmations"
             eventName="learn_link_clicked"
@@ -427,14 +435,6 @@ export default function HomePage() {
             eventProperties={{ slug: "how-to-practice-mirror-work" }}
           >
             How to practice mirror work
-          </TrackedLink>
-          <TrackedLink
-            href="/affirmations-to-say-to-yourself-in-the-mirror"
-            title="Read affirmations to say to yourself in the mirror"
-            eventName="learn_link_clicked"
-            eventProperties={{ slug: "affirmations-to-say-to-yourself-in-the-mirror" }}
-          >
-            Affirmations to say in the mirror
           </TrackedLink>
         </div>
       </section>

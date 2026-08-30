@@ -5,14 +5,14 @@ import { WaitlistForm } from "@/components/WaitlistForm";
 import { absoluteUrl, site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Join the Waitlist | Mirror Affirmations",
+  title: "Join the Waitlist",
   description:
     "Join the Mirror Affirmations waitlist and tell us which privacy-first features matter most: local recording, private history, reminders, and more.",
   alternates: {
     canonical: "/waitlist"
   },
   openGraph: {
-    title: "Join the Waitlist | Mirror Affirmations",
+    title: "Join the Waitlist",
     description:
       "Join the Mirror Affirmations waitlist and tell us which privacy-first features matter most: local recording, private history, reminders, and more.",
     url: absoluteUrl("/waitlist"),

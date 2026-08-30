@@ -3,13 +3,13 @@ import Link from "next/link";
 import { absoluteUrl, site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Terms | Mirror Affirmations",
+  title: "Terms",
   description: "Basic terms for using the Mirror Affirmations private mirror practice demo and waitlist.",
   alternates: {
     canonical: "/terms"
   },
   openGraph: {
-    title: "Terms | Mirror Affirmations",
+    title: "Terms",
     description: "Basic terms for using the Mirror Affirmations private mirror practice demo and waitlist.",
     url: absoluteUrl("/terms"),
     type: "website",

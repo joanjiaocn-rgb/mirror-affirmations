@@ -5,7 +5,7 @@ export const site = {
     "Try a private mirror affirmation practice with gentle prompts on screen. Use your camera for a live preview only. No recording or video upload in the web demo.",
   editorialAuthor: "Mirror Affirmations Editorial Team",
   publishedDate: "2026-07-30",
-  lastUpdated: "2026-08-10",
+  lastUpdated: "2026-08-30",
   contactEmail: "contact@mirroraffirmations.online",
   githubUrl: "https://github.com/joanjiaocn-rgb/mirror-affirmations",
   gaMeasurementId: "",

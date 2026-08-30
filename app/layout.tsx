@@ -125,6 +125,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                 <Link href="/sleep-affirmations-for-a-calmer-evening" title="Read sleep affirmations for a calmer evening">Sleep Affirmations</Link>
                 <Link href="/how-mirror-affirmations-work" title="Read how Mirror Affirmations works">How It Works</Link>
                 <Link href="/positive-self-talk" title="Read about positive self-talk">Positive Self-Talk</Link>
+                <Link href="/affirmations-to-say-to-yourself-in-the-mirror" title="Read 25 affirmations to say to yourself in the mirror">25 Mirror Affirmations</Link>
                 <Link href="/about" title="About Mirror Affirmations">About</Link>
                 <Link href="/contact" title="Contact Mirror Affirmations">Contact</Link>
                 <Link href="/waitlist" title="Join the Mirror Affirmations waitlist">Waitlist</Link>

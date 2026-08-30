@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Camera, Lock } from "lucide-react";
+import { ArrowRight, Camera, Clock3, Lock, Sparkles } from "lucide-react";
 import { notFound } from "next/navigation";
 import { articlePages, getArticle } from "@/lib/articles";
 import { referenceSources } from "@/lib/contentSources";
@@ -53,7 +53,32 @@ export default async function ArticleRoute({ params }: Props) {
     notFound();
   }
 
+  const isFeaturedGuide = page.slug === "affirmations-to-say-to-yourself-in-the-mirror";
   const related = page.related.map((relatedSlug) => getArticle(relatedSlug)).filter((item): item is NonNullable<typeof item> => Boolean(item));
+  const updatedDate = new Intl.DateTimeFormat("en-US", {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+    timeZone: "UTC"
+    }).format(new Date(`${site.lastUpdated}T00:00:00.000Z`));
+  const sectionId = (value: string) =>
+    value
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-|-$/g, "");
+  const featuredStats = [
+    { icon: Clock3, label: "1 minute to try" },
+    { icon: Lock, label: "No recording" },
+    { icon: Sparkles, label: "25 private lines" }
+  ];
+  const featuredAnchors = [
+    { href: "#prompts", label: "25 affirmations" },
+    ...page.sections.map((section) => ({
+      href: `#${sectionId(section.heading)}`,
+      label: section.heading
+    })),
+    { href: "#faq", label: "FAQ" }
+  ];
 
   const faqSchema = {
     "@context": "https://schema.org",
@@ -106,50 +131,148 @@ export default async function ArticleRoute({ params }: Props) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <article className="article-page">
-        <div className="breadcrumb">
-          <Link href="/" title="Mirror Affirmations home">
-            Home
-          </Link>{" "}
-          / {page.h1}
-        </div>
-        <p className="eyebrow">Gentle self-talk guide</p>
-        <h1>{page.h1}</h1>
-        <p className="article-intro">{page.intro}</p>
-        <p className="content-meta">
-          By {site.editorialAuthor}. Updated August 9, 2026.
-        </p>
+      <article className={`article-page${isFeaturedGuide ? " article-page--featured" : ""}`}>
+        {isFeaturedGuide ? (
+          <>
+            <header className="article-hero">
+              <div className="article-hero-copy">
+                <div className="breadcrumb">
+                  <Link href="/" title="Mirror Affirmations home">
+                    Home
+                  </Link>{" "}
+                  / {page.h1}
+                </div>
+                <p className="eyebrow">Gentle self-talk guide</p>
+                <h1>{page.h1}</h1>
+                <p className="article-intro">{page.intro}</p>
+                <p className="content-meta">
+                  By {site.editorialAuthor}. Updated {updatedDate}.
+                </p>
 
-        <div className="article-cta">
-          <div>
-            <h2>Try it privately</h2>
-            <p>
-              Your camera preview stays in your browser. The demo does not record, save, or upload video.
+                <div className="article-stat-row" aria-label="Guide summary">
+                  {featuredStats.map((item) => (
+                    <span key={item.label}>
+                      <item.icon size={14} aria-hidden="true" />
+                      {item.label}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="article-cta article-cta-inline">
+                  <div>
+                    <h2>Try it privately</h2>
+                    <p>
+                      Your camera preview stays in your browser. The demo does not record, save, or upload video.
+                    </p>
+                  </div>
+                  <Link className="primary-button" href={page.ctaHref} title={page.cta}>
+                    <Camera size={17} aria-hidden="true" />
+                    {page.cta}
+                  </Link>
+                </div>
+
+                <div className="article-toc" aria-label="Section shortcuts">
+                  {featuredAnchors.map((item) => (
+                    <Link key={item.href} href={item.href} title={`Jump to ${item.label}`}>
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+              <aside className="article-hero-aside">
+                <div className="article-hero-card">
+                  <p className="article-hero-label">Best for</p>
+                  <ul className="article-hero-list">
+                    <li>Morning starts before messages</li>
+                    <li>Self-doubt that needs a smaller sentence</li>
+                    <li>Work stress you want to leave at work</li>
+                    <li>Bedtime when the day is still noisy</li>
+                  </ul>
+                </div>
+                <div className="article-hero-card article-hero-card-muted">
+                  <p className="article-hero-label">Practice rule</p>
+                  <p>One believable line is better than a dramatic line you cannot say twice.</p>
+                </div>
+              </aside>
+            </header>
+
+            <section className="article-section article-section-prompts" id="prompts">
+              <div className="section-heading article-section-heading">
+                <p className="eyebrow">25 prompts</p>
+                <h2>Pick one line and speak it once</h2>
+                <p>
+                  The grid below is arranged so the page feels more like a practice sheet than a wall of text.
+                </p>
+              </div>
+              <div className="prompt-matrix">
+                {page.prompts.map((prompt, index) => (
+                  <article className="prompt-tile" key={prompt}>
+                    <span className="prompt-tile-index">{String(index + 1).padStart(2, "0")}</span>
+                    <blockquote>{prompt}</blockquote>
+                  </article>
+                ))}
+              </div>
+            </section>
+
+            <div className="article-section-stack">
+              {page.sections.map((section) => (
+                <section className="article-section article-section-card" id={sectionId(section.heading)} key={section.heading}>
+                  <h2>{section.heading}</h2>
+                  {section.body.map((paragraph) => (
+                    <p key={paragraph}>{paragraph}</p>
+                  ))}
+                </section>
+              ))}
+            </div>
+          </>
+        ) : (
+          <>
+            <div className="breadcrumb">
+              <Link href="/" title="Mirror Affirmations home">
+                Home
+              </Link>{" "}
+              / {page.h1}
+            </div>
+            <p className="eyebrow">Gentle self-talk guide</p>
+            <h1>{page.h1}</h1>
+            <p className="article-intro">{page.intro}</p>
+            <p className="content-meta">
+              By {site.editorialAuthor}. Updated {updatedDate}.
             </p>
-          </div>
-          <Link className="primary-button" href={page.ctaHref} title={page.cta}>
-            <Camera size={17} aria-hidden="true" />
-            {page.cta}
-          </Link>
-        </div>
 
-        <section>
-          <h2>Prompts to try</h2>
-          <div className="prompt-list">
-            {page.prompts.map((prompt) => (
-              <blockquote key={prompt}>{prompt}</blockquote>
-            ))}
-          </div>
-        </section>
+            <div className="article-cta">
+              <div>
+                <h2>Try it privately</h2>
+                <p>
+                  Your camera preview stays in your browser. The demo does not record, save, or upload video.
+                </p>
+              </div>
+              <Link className="primary-button" href={page.ctaHref} title={page.cta}>
+                <Camera size={17} aria-hidden="true" />
+                {page.cta}
+              </Link>
+            </div>
 
-        {page.sections.map((section) => (
-          <section key={section.heading}>
-            <h2>{section.heading}</h2>
-            {section.body.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
+            <section>
+              <h2>Prompts to try</h2>
+              <div className="prompt-list">
+                {page.prompts.map((prompt) => (
+                  <blockquote key={prompt}>{prompt}</blockquote>
+                ))}
+              </div>
+            </section>
+
+            {page.sections.map((section) => (
+              <section key={section.heading}>
+                <h2>{section.heading}</h2>
+                {section.body.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+              </section>
             ))}
-          </section>
-        ))}
+          </>
+        )}
 
         <section className="privacy-callout">
           <Lock size={20} aria-hidden="true" />
@@ -180,7 +303,7 @@ export default async function ArticleRoute({ params }: Props) {
           </ul>
         </section>
 
-        <section>
+        <section id="faq">
           <h2>FAQ</h2>
           <div className="faq-list">
             {page.faqs.map((faq) => (

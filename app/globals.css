@@ -3004,3 +3004,417 @@ h2 {
     padding: 18px;
   }
 }
+
+/* Homepage refinement: make the product preview feel like the practice itself. */
+.hero-section--immersive {
+  position: relative;
+  isolation: isolate;
+  grid-template-columns: minmax(0, 1fr) minmax(330px, 460px);
+  min-height: 680px;
+  width: min(1240px, calc(100% - 48px));
+  gap: 76px;
+  margin-top: 30px;
+  margin-bottom: 62px;
+  padding: 74px 72px;
+  overflow: hidden;
+  border: 1px solid #315f58;
+  border-radius: 8px;
+  background: #244d47;
+  color: #fffdf8;
+}
+
+.hero-section--immersive::before {
+  content: "";
+  position: absolute;
+  inset: 22px;
+  z-index: -1;
+  border: 1px solid rgba(255, 253, 248, 0.14);
+  pointer-events: none;
+}
+
+.hero-ambient {
+  position: absolute;
+  z-index: -1;
+  display: block;
+  border: 1px solid rgba(239, 179, 102, 0.28);
+  background: rgba(239, 179, 102, 0.05);
+  pointer-events: none;
+}
+
+.hero-ambient-one {
+  top: -118px;
+  right: 26%;
+  width: 250px;
+  height: 390px;
+  transform: rotate(26deg);
+}
+
+.hero-ambient-two {
+  right: -92px;
+  bottom: -112px;
+  width: 360px;
+  height: 226px;
+  transform: rotate(-14deg);
+}
+
+.hero-section--immersive .hero-copy,
+.hero-section--immersive .hero-preview {
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+}
+
+.hero-section--immersive .eyebrow,
+.hero-section--immersive .content-meta {
+  color: #efb366;
+}
+
+.hero-section--immersive .hero-title-row {
+  align-items: end;
+}
+
+.hero-section--immersive .hero-title-row > span {
+  margin-bottom: 10px;
+  color: rgba(255, 253, 248, 0.62);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.hero-section--immersive h1 {
+  color: #fffdf8;
+  font-size: 72px;
+  line-height: 0.92;
+}
+
+.hero-section--immersive .hero-subtitle {
+  max-width: 510px;
+  color: #fffdf8;
+  font-size: 30px;
+  line-height: 1.13;
+}
+
+.hero-section--immersive .hero-body {
+  max-width: 550px;
+  color: rgba(255, 253, 248, 0.76);
+}
+
+.hero-section--immersive .content-meta {
+  margin-top: 14px;
+  margin-bottom: 0;
+}
+
+.hero-section--immersive .primary-button {
+  background: #efb366;
+  color: #203f3a;
+  box-shadow: none;
+}
+
+.hero-section--immersive .primary-button:hover {
+  background: #f7c77f;
+}
+
+.hero-section--immersive .secondary-button {
+  border-color: rgba(255, 253, 248, 0.36);
+  background: transparent;
+  color: #fffdf8;
+}
+
+.hero-section--immersive .secondary-button:hover {
+  border-color: rgba(255, 253, 248, 0.76);
+  background: rgba(255, 253, 248, 0.08);
+}
+
+.hero-section--immersive .privacy-inline {
+  max-width: 510px;
+  color: rgba(255, 253, 248, 0.72);
+}
+
+.hero-details--ritual {
+  gap: 0;
+  margin-top: 24px;
+  border-top: 1px solid rgba(255, 253, 248, 0.19);
+  border-bottom: 1px solid rgba(255, 253, 248, 0.19);
+}
+
+.hero-details--ritual span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 12px 18px 12px 0;
+  border-right: 1px solid rgba(255, 253, 248, 0.19);
+  color: #fffdf8;
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.hero-details--ritual span + span {
+  padding-left: 18px;
+}
+
+.hero-details--ritual span:last-child {
+  border-right: 0;
+}
+
+.hero-details--ritual svg {
+  color: #efb366;
+}
+
+.hero-section--immersive .practice-window {
+  width: min(100%, 430px);
+  border: 1px solid rgba(255, 253, 248, 0.32);
+  border-radius: 8px;
+  box-shadow: 18px 18px 0 rgba(239, 179, 102, 0.18);
+}
+
+.hero-section--immersive .practice-window-bar {
+  min-height: 52px;
+  padding: 0 16px;
+  background: #183b36;
+}
+
+.hero-section--immersive .practice-window-title,
+.hero-section--immersive .practice-window-state {
+  font-size: 12px;
+  letter-spacing: 0;
+}
+
+.hero-section--immersive .practice-window-state {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #efb366;
+}
+
+.hero-section--immersive .practice-window-stage {
+  min-height: 482px;
+  overflow: hidden;
+  background: #315d56;
+}
+
+.practice-window-light {
+  position: absolute;
+  display: block;
+  border: 1px solid rgba(255, 253, 248, 0.18);
+  background: rgba(255, 253, 248, 0.06);
+}
+
+.practice-window-light-one {
+  top: 40px;
+  right: 44px;
+  width: 58px;
+  height: 210px;
+}
+
+.practice-window-light-two {
+  bottom: 62px;
+  left: 36px;
+  width: 132px;
+  height: 56px;
+}
+
+.hero-section--immersive .mirror-frame-art {
+  border-width: 26px;
+  border-color: rgba(255, 253, 248, 0.17);
+  border-radius: 140px 140px 20px 20px;
+}
+
+.hero-section--immersive .mirror-frame-line {
+  background: #efb366;
+}
+
+.hero-section--immersive .preview-prompt {
+  max-width: 292px;
+  color: #fffdf8;
+  font-size: 42px;
+  line-height: 1.03;
+}
+
+.hero-section--immersive .preview-prompt-meta {
+  right: 28px;
+  bottom: 26px;
+  left: 28px;
+}
+
+.hero-section--immersive .practice-window-footer {
+  min-height: 64px;
+  padding: 0 16px;
+  background: #183b36;
+}
+
+.hero-section--immersive .practice-window-footer a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #efb366;
+}
+
+.feature-grid {
+  gap: 16px;
+}
+
+.feature-block,
+.feature-block + .feature-block {
+  min-height: 238px;
+  border-color: var(--line);
+  border-top: 4px solid var(--sage);
+  padding: 28px;
+}
+
+.feature-block:nth-child(2) {
+  border-top-color: var(--rose);
+}
+
+.feature-block:nth-child(3) {
+  border-top-color: var(--clay);
+}
+
+.feature-number {
+  margin-bottom: 46px;
+  color: var(--muted-ink);
+  font-size: 11px;
+}
+
+.feature-block h3 {
+  font-size: 20px;
+}
+
+.category-row {
+  transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+}
+
+.category-row svg {
+  align-self: center;
+  color: var(--sage-dark);
+}
+
+.category-row:nth-child(3n + 2) svg {
+  color: var(--rose);
+}
+
+.category-row:nth-child(3n) svg {
+  color: var(--clay);
+}
+
+.category-row:hover {
+  transform: translateY(-3px);
+}
+
+@media (max-width: 900px) {
+  .hero-section--immersive {
+    grid-template-columns: 1fr;
+    min-height: 0;
+    width: min(100% - 32px, 720px);
+    gap: 48px;
+    margin-top: 20px;
+    padding: 58px 44px 48px;
+  }
+
+  .hero-section--immersive .hero-preview {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-section--immersive {
+    width: calc(100vw - 24px);
+    max-width: calc(100vw - 24px);
+    margin-top: 12px;
+    margin-bottom: 34px;
+    padding: 46px 22px 28px;
+  }
+
+  .hero-section--immersive::before {
+    inset: 10px;
+  }
+
+  .hero-section--immersive h1 {
+    font-size: 54px;
+  }
+
+  .hero-section--immersive .hero-subtitle {
+    font-size: 25px;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  .hero-section--immersive .hero-copy {
+    order: 0;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .hero-section--immersive .hero-copy > * {
+    max-width: 100%;
+  }
+
+  .hero-section--immersive .hero-body,
+  .hero-section--immersive .content-meta,
+  .hero-section--immersive .privacy-inline {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  .hero-section--immersive .hero-preview {
+    order: 1;
+    min-width: 0;
+  }
+
+  .hero-title-row > span {
+    display: none;
+  }
+
+  .hero-details--ritual {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero-details--ritual span,
+  .hero-details--ritual span + span {
+    padding: 11px 0;
+    border-right: 0;
+  }
+
+  .hero-details--ritual span:last-child {
+    grid-column: 1 / -1;
+    border-top: 1px solid rgba(255, 253, 248, 0.19);
+  }
+
+  .hero-section--immersive .practice-window {
+    width: 100%;
+    box-shadow: 10px 10px 0 rgba(239, 179, 102, 0.18);
+  }
+
+  .hero-section--immersive .practice-window-stage {
+    min-height: 398px;
+  }
+
+  .hero-section--immersive .practice-window-footer {
+    gap: 8px;
+    padding: 0 12px;
+    font-size: 11px;
+  }
+
+  .hero-section--immersive .practice-window-footer a {
+    gap: 5px;
+  }
+
+  .hero-section--immersive .preview-prompt {
+    max-width: 248px;
+    font-size: 34px;
+  }
+
+  .hero-ambient-one {
+    right: -106px;
+  }
+
+  .feature-block,
+  .feature-block + .feature-block {
+    min-height: 0;
+    padding: 24px;
+  }
+
+  .feature-number {
+    margin-bottom: 30px;
+  }
+}

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Camera, CheckCircle2, Lock, MessageCircle } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Camera, CheckCircle2, HeartHandshake, Lock, MessageCircle, Sparkles } from "lucide-react";
 import { TrackedLink } from "@/components/TrackedLink";
 import { WaitlistForm } from "@/components/WaitlistForm";
 import { practiceDataPoints, referenceSources } from "@/lib/contentSources";
@@ -106,12 +106,14 @@ export default function HomePage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(homeJsonLd) }} />
 
-      <section className="hero-section">
+      <section className="hero-section hero-section--immersive">
+        <div className="hero-ambient hero-ambient-one" aria-hidden="true" />
+        <div className="hero-ambient hero-ambient-two" aria-hidden="true" />
         <div className="hero-copy">
           <p className="eyebrow">A quiet practice for ordinary days</p>
           <div className="hero-title-row">
             <h1>Mirror<br />Affirmations</h1>
-            <span aria-hidden="true">01</span>
+            <span aria-hidden="true">01 / private practice</span>
           </div>
           <p className="hero-subtitle">A private mirror practice for saying one gentle thing to yourself.</p>
           <p className="hero-body">
@@ -146,10 +148,10 @@ export default function HomePage() {
             <Lock size={15} aria-hidden="true" />
             Camera preview stays in your browser. No account. No feed. No recording in the web demo.
           </p>
-          <div className="hero-details" aria-label="Practice details">
-            <span>One minute</span>
-            <span>No account</span>
-            <span>Private by design</span>
+          <div className="hero-details hero-details--ritual" aria-label="Practice details">
+            <span><Sparkles size={14} aria-hidden="true" /> One minute</span>
+            <span><Lock size={14} aria-hidden="true" /> No account</span>
+            <span><HeartHandshake size={14} aria-hidden="true" /> Your pace</span>
           </div>
         </div>
         <div className="hero-preview" aria-label="Mirror Affirmations product preview">
@@ -157,11 +159,13 @@ export default function HomePage() {
             <div className="practice-window-bar">
               <span className="practice-window-title">
                 <i aria-hidden="true" />
-                Mirror practice
+                Your private practice
               </span>
-              <span className="practice-window-state">Private preview</span>
+              <span className="practice-window-state"><Lock size={13} aria-hidden="true" /> Private</span>
             </div>
             <div className="practice-window-stage">
+              <span className="practice-window-light practice-window-light-one" aria-hidden="true" />
+              <span className="practice-window-light practice-window-light-two" aria-hidden="true" />
               <div className="mirror-frame-art" aria-hidden="true">
                 <span className="mirror-frame-line mirror-frame-line-one" />
                 <span className="mirror-frame-line mirror-frame-line-two" />
@@ -184,7 +188,8 @@ export default function HomePage() {
                 eventProperties={{ position: "hero_preview" }}
               >
                 <Camera size={16} aria-hidden="true" />
-                Open practice
+                Begin now
+                <ArrowUpRight size={15} aria-hidden="true" />
               </TrackedLink>
             </div>
           </div>
@@ -202,19 +207,19 @@ export default function HomePage() {
         </div>
         <div className="feature-grid">
           <article className="feature-block">
-            <span className="feature-number">01</span>
+            <span className="feature-number">01 / privacy</span>
             <Lock size={21} aria-hidden="true" />
             <h3>Private by default</h3>
             <p>The browser demo uses your camera only for live preview. It does not record, save, or upload video.</p>
           </article>
           <article className="feature-block">
-            <span className="feature-number">02</span>
+            <span className="feature-number">02 / language</span>
             <MessageCircle size={21} aria-hidden="true" />
             <h3>Built for gentle self-talk</h3>
             <p>Prompts are short, spoken, and first-person. No hype, no pressure, no forced positivity.</p>
           </article>
           <article className="feature-block">
-            <span className="feature-number">03</span>
+            <span className="feature-number">03 / ritual</span>
             <Camera size={21} aria-hidden="true" />
             <h3>Easy to try</h3>
             <p>Start with one line, adjust the text position, and practice without creating an account.</p>

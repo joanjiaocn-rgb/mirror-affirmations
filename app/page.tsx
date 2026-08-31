@@ -113,7 +113,7 @@ export default function HomePage() {
           <p className="eyebrow">A quiet practice for ordinary days</p>
           <div className="hero-title-row">
             <h1>Mirror<br />Affirmations</h1>
-            <span aria-hidden="true">01 / private practice</span>
+            <span aria-hidden="true">Private mirror work</span>
           </div>
           <p className="hero-subtitle">A private mirror practice for saying one gentle thing to yourself.</p>
           <p className="hero-body">
@@ -132,16 +132,16 @@ export default function HomePage() {
               eventProperties={{ position: "hero" }}
             >
               <Camera size={18} aria-hidden="true" />
-              Start private practice
+              Open private practice
             </TrackedLink>
             <TrackedLink
               className="secondary-button"
-              href="/waitlist"
-              title="Join the Mirror Affirmations waitlist"
-              eventName="homepage_waitlist_clicked"
-              eventProperties={{ position: "hero" }}
+              href="/how-mirror-affirmations-work"
+              title="Read how Mirror Affirmations works"
+              eventName="learn_link_clicked"
+              eventProperties={{ position: "hero", slug: "how-mirror-affirmations-work" }}
             >
-              Join the waitlist
+              How it works
             </TrackedLink>
           </div>
           <p className="privacy-inline">
@@ -161,7 +161,7 @@ export default function HomePage() {
                 <i aria-hidden="true" />
                 Your private practice
               </span>
-              <span className="practice-window-state"><Lock size={13} aria-hidden="true" /> Private</span>
+            <span className="practice-window-state"><Lock size={13} aria-hidden="true" /> Private</span>
             </div>
             <div className="practice-window-stage">
               <span className="practice-window-light practice-window-light-one" aria-hidden="true" />
@@ -188,7 +188,7 @@ export default function HomePage() {
                 eventProperties={{ position: "hero_preview" }}
               >
                 <Camera size={16} aria-hidden="true" />
-                Begin now
+                Open practice
                 <ArrowUpRight size={15} aria-hidden="true" />
               </TrackedLink>
             </div>

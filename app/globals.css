@@ -3418,3 +3418,358 @@ h2 {
     margin-bottom: 30px;
   }
 }
+
+/* Editorial wellness pass: content and the practice take priority over a branded hero treatment. */
+.hero-section--immersive {
+  width: min(1000px, calc(100% - 48px));
+  min-height: 0;
+  gap: 68px;
+  margin-top: 54px;
+  margin-bottom: 72px;
+  padding: 0;
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--ink);
+}
+
+.hero-section--immersive::before,
+.hero-section--immersive .hero-ambient {
+  display: none;
+}
+
+.hero-section--immersive .eyebrow,
+.hero-section--immersive .content-meta {
+  color: var(--muted-ink);
+}
+
+.hero-section--immersive .eyebrow {
+  margin-bottom: 16px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: none;
+}
+
+.hero-section--immersive .hero-title-row {
+  align-items: start;
+}
+
+.hero-section--immersive .hero-title-row > span {
+  margin: 9px 0 0;
+  color: var(--muted-ink);
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.hero-section--immersive h1,
+.hero-section--immersive .hero-subtitle {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+}
+
+.hero-section--immersive h1 {
+  color: var(--ink);
+  font-size: 60px;
+  line-height: 0.98;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.hero-section--immersive .hero-subtitle {
+  max-width: 500px;
+  color: var(--ink);
+  font-size: 28px;
+  line-height: 1.2;
+}
+
+.hero-section--immersive .hero-body {
+  max-width: 500px;
+  color: var(--muted-ink);
+}
+
+.hero-section--immersive .content-meta {
+  margin-top: 18px;
+  margin-bottom: 0;
+  font-size: 12px;
+}
+
+.hero-section--immersive .primary-button {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: #ffffff;
+  box-shadow: none;
+}
+
+.hero-section--immersive .primary-button:hover {
+  border-color: #344a45;
+  background: #344a45;
+}
+
+.hero-section--immersive .secondary-button {
+  border-color: var(--line);
+  background: transparent;
+  color: var(--ink);
+}
+
+.hero-section--immersive .secondary-button:hover {
+  border-color: var(--ink);
+  background: transparent;
+}
+
+.hero-section--immersive .privacy-inline {
+  max-width: 500px;
+  color: var(--muted-ink);
+}
+
+.hero-section--immersive .privacy-inline svg {
+  color: var(--sage-dark);
+}
+
+.hero-details--ritual {
+  gap: 18px;
+  margin-top: 22px;
+  border: 0;
+}
+
+.hero-details--ritual span,
+.hero-details--ritual span + span {
+  padding: 0;
+  border: 0;
+  color: var(--muted-ink);
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.hero-details--ritual svg {
+  color: var(--sage-dark);
+}
+
+.hero-section--immersive .practice-window {
+  width: min(100%, 420px);
+  border: 1px solid #2f3935;
+  border-radius: 8px;
+  box-shadow: none;
+}
+
+.hero-section--immersive .practice-window-bar,
+.hero-section--immersive .practice-window-footer {
+  background: #2f3935;
+}
+
+.hero-section--immersive .practice-window-bar {
+  min-height: 48px;
+  padding: 0 15px;
+}
+
+.hero-section--immersive .practice-window-stage {
+  min-height: 454px;
+  background: #778177;
+}
+
+.hero-section--immersive .practice-window-light {
+  display: none;
+}
+
+.hero-section--immersive .mirror-frame-art {
+  border-width: 22px;
+  border-color: rgba(255, 255, 255, 0.22);
+  border-radius: 140px 140px 10px 10px;
+}
+
+.hero-section--immersive .mirror-frame-line {
+  background: rgba(255, 255, 255, 0.32);
+}
+
+.hero-section--immersive .preview-prompt {
+  max-width: 280px;
+  color: #ffffff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 37px;
+  font-weight: 400;
+  line-height: 1.08;
+}
+
+.hero-section--immersive .preview-prompt-meta {
+  right: 24px;
+  bottom: 22px;
+  left: 24px;
+}
+
+.hero-section--immersive .practice-window-footer {
+  min-height: 58px;
+  padding: 0 15px;
+}
+
+.hero-section--immersive .practice-window-footer a {
+  color: #ffffff;
+}
+
+.hero-section--immersive .practice-window-state {
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.content-band {
+  width: min(1000px, calc(100% - 48px));
+}
+
+.content-band .section-heading {
+  max-width: 640px;
+}
+
+.content-band .section-heading h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+}
+
+.feature-grid,
+.category-grid,
+.link-grid {
+  gap: 0;
+}
+
+.feature-block,
+.feature-block + .feature-block {
+  min-height: 212px;
+  border: 0;
+  border-top: 1px solid var(--line);
+  border-radius: 0;
+  padding: 24px 28px 24px 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.feature-block + .feature-block {
+  border-left: 1px solid var(--line);
+  padding-left: 28px;
+}
+
+.feature-block,
+.feature-block:nth-child(2),
+.feature-block:nth-child(3) {
+  border-top-color: var(--line);
+}
+
+.feature-number {
+  margin-bottom: 34px;
+  color: var(--muted-ink);
+  font-weight: 650;
+}
+
+.feature-block h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 21px;
+  font-weight: 400;
+}
+
+.category-row {
+  min-height: 136px;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  padding: 20px 30px 20px 42px;
+  background: transparent;
+  box-shadow: none;
+}
+
+.category-row:first-child,
+.category-row:nth-child(2) {
+  border-top: 1px solid var(--line);
+}
+
+.category-row:hover {
+  border-color: var(--ink);
+  background: transparent;
+  box-shadow: none;
+  transform: none;
+}
+
+.category-row h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 21px;
+  font-weight: 400;
+}
+
+.category-number {
+  top: 24px;
+  left: 0;
+  color: var(--muted-ink);
+}
+
+@media (max-width: 900px) {
+  .hero-section--immersive,
+  .content-band {
+    width: min(100% - 32px, 680px);
+  }
+
+  .hero-section--immersive {
+    gap: 46px;
+    margin-top: 40px;
+  }
+
+  .hero-section--immersive .hero-preview {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-section--immersive,
+  .content-band {
+    width: calc(100% - 32px);
+  }
+
+  .hero-section--immersive {
+    margin-top: 32px;
+    margin-bottom: 52px;
+  }
+
+  .hero-section--immersive h1 {
+    font-size: 49px;
+  }
+
+  .hero-section--immersive .hero-subtitle {
+    width: 100%;
+    max-width: 340px;
+    font-size: 25px;
+    overflow-wrap: break-word;
+    word-break: normal;
+  }
+
+  .hero-section--immersive .hero-body,
+  .hero-section--immersive .content-meta,
+  .hero-section--immersive .privacy-inline,
+  .hero-section--immersive .hero-actions,
+  .hero-details--ritual {
+    width: 100%;
+    max-width: 340px;
+  }
+
+  .hero-section--immersive .hero-title-row > span {
+    display: none;
+  }
+
+  .hero-details--ritual {
+    display: flex;
+    gap: 13px;
+  }
+
+  .hero-section--immersive .practice-window-stage {
+    min-height: 430px;
+  }
+
+  .feature-block,
+  .feature-block + .feature-block {
+    min-height: 0;
+    border-left: 0;
+    padding: 22px 0;
+  }
+
+  .feature-number {
+    margin-bottom: 24px;
+  }
+
+  .category-row {
+    padding-right: 26px;
+  }
+}

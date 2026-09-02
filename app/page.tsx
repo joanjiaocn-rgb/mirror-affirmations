@@ -1,5 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, Camera, CheckCircle2, HeartHandshake, Lock, MessageCircle, Sparkles } from "lucide-react";
+import { ArrowRight, Camera, CheckCircle2, Lock, MessageCircle } from "lucide-react";
 import { TrackedLink } from "@/components/TrackedLink";
 import { WaitlistForm } from "@/components/WaitlistForm";
 import { practiceDataPoints, referenceSources } from "@/lib/contentSources";
@@ -106,94 +107,76 @@ export default function HomePage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(homeJsonLd) }} />
 
-      <section className="hero-section hero-section--immersive">
-        <div className="hero-ambient hero-ambient-one" aria-hidden="true" />
-        <div className="hero-ambient hero-ambient-two" aria-hidden="true" />
-        <div className="hero-copy">
-          <p className="eyebrow">A quiet practice for ordinary days</p>
-          <div className="hero-title-row">
-            <h1>Mirror<br />Affirmations</h1>
-            <span aria-hidden="true">Private mirror work</span>
-          </div>
-          <p className="hero-subtitle">A private mirror practice for saying one gentle thing to yourself.</p>
-          <p className="hero-body">
-            Open your camera, choose a prompt, and read it out loud while looking at yourself. The web demo is
-            practice-only: it does not record, save, or upload video.
+      <header className="ritual-design-header">
+        <Link className="ritual-design-brand" href="/" title="Mirror Affirmations home">
+          Mirror Affirmations
+        </Link>
+        <nav className="ritual-design-nav" aria-label="Homepage navigation">
+          <Link href="/mirror-affirmations" title="Browse mirror affirmations">Affirmations</Link>
+          <Link href="/how-mirror-affirmations-work" title="Read how mirror affirmations work">How it works</Link>
+          <Link href="/privacy" title="Read the privacy policy">Privacy</Link>
+          <TrackedLink
+            className="ritual-design-nav-action"
+            href="/demo"
+            title="Open the private mirror practice demo"
+            eventName="homepage_demo_clicked"
+            eventProperties={{ position: "navigation" }}
+          >
+            Open private practice
+          </TrackedLink>
+        </nav>
+      </header>
+
+      <section className="home-ritual" aria-labelledby="home-ritual-title">
+        <Image
+          className="home-ritual-image"
+          src="/images/mirror-affirmations-ritual.jpg"
+          alt="A person pausing in front of a bathroom mirror"
+          fill
+          priority
+          sizes="100vw"
+        />
+        <div className="home-ritual-shade" aria-hidden="true" />
+        <div className="home-ritual-copy">
+          <p className="home-ritual-eyebrow">A quiet practice for ordinary days</p>
+          <h1 id="home-ritual-title">Mirror<br />Affirmations</h1>
+          <p className="home-ritual-lead">
+            Meet your own gaze. Choose one gentle sentence. Say it aloud in a space that stays yours.
           </p>
-          <p className="content-meta">
-            By {site.editorialAuthor}. Updated August 9, 2026.
-          </p>
-          <div className="hero-actions">
+          <div className="home-ritual-actions">
             <TrackedLink
-              className="primary-button"
+              className="home-ritual-primary"
               href="/demo"
               title="Start the private mirror practice demo"
               eventName="homepage_demo_clicked"
               eventProperties={{ position: "hero" }}
             >
-              <Camera size={18} aria-hidden="true" />
+              <Camera size={17} aria-hidden="true" />
               Open private practice
             </TrackedLink>
             <TrackedLink
-              className="secondary-button"
-              href="/how-mirror-affirmations-work"
-              title="Read how Mirror Affirmations works"
+              className="home-ritual-secondary"
+              href="/mirror-affirmations"
+              title="Browse mirror affirmations"
               eventName="learn_link_clicked"
-              eventProperties={{ position: "hero", slug: "how-mirror-affirmations-work" }}
+              eventProperties={{ position: "hero", slug: "mirror-affirmations" }}
             >
-              How it works
+              Browse affirmations
             </TrackedLink>
           </div>
-          <p className="privacy-inline">
-            <Lock size={15} aria-hidden="true" />
-            Camera preview stays in your browser. No account. No feed. No recording in the web demo.
+          <p className="home-ritual-privacy">
+            <Lock size={14} aria-hidden="true" />
+            No recording. Camera stays in your browser.
           </p>
-          <div className="hero-details hero-details--ritual" aria-label="Practice details">
-            <span><Sparkles size={14} aria-hidden="true" /> One minute</span>
-            <span><Lock size={14} aria-hidden="true" /> No account</span>
-            <span><HeartHandshake size={14} aria-hidden="true" /> Your pace</span>
-          </div>
         </div>
-        <div className="hero-preview" aria-label="Mirror Affirmations product preview">
-          <div className="practice-window">
-            <div className="practice-window-bar">
-              <span className="practice-window-title">
-                <i aria-hidden="true" />
-                Your private practice
-              </span>
-            <span className="practice-window-state"><Lock size={13} aria-hidden="true" /> Private</span>
-            </div>
-            <div className="practice-window-stage">
-              <span className="practice-window-light practice-window-light-one" aria-hidden="true" />
-              <span className="practice-window-light practice-window-light-two" aria-hidden="true" />
-              <div className="mirror-frame-art" aria-hidden="true">
-                <span className="mirror-frame-line mirror-frame-line-one" />
-                <span className="mirror-frame-line mirror-frame-line-two" />
-              </div>
-              <p className="preview-prompt">I can let today be enough.</p>
-              <div className="preview-prompt-meta">
-                <span>Bedtime</span>
-                <span>Prompt 01</span>
-              </div>
-            </div>
-            <div className="practice-window-footer">
-              <span>
-                <Lock size={14} aria-hidden="true" />
-                Browser only
-              </span>
-              <TrackedLink
-                href="/demo"
-                title="Open the private mirror practice demo"
-                eventName="preview_demo_clicked"
-                eventProperties={{ position: "hero_preview" }}
-              >
-                <Camera size={16} aria-hidden="true" />
-                Open practice
-                <ArrowUpRight size={15} aria-hidden="true" />
-              </TrackedLink>
-            </div>
-          </div>
-        </div>
+        <p className="home-ritual-credit">
+          Concept photo: skeyndor.oficial / CC0
+        </p>
+      </section>
+
+      <section className="home-ritual-next" aria-label="Practice introduction">
+        <span>The practice</span>
+        <p>One private minute to hear the words in your own voice.</p>
       </section>
 
       <section className="content-band">
